@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us </title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <link rel="stylesheet" href="./style.css">
+
+
+    <!-- tailwind script -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+
+
+    <!-- Top bar header -->
+    <div class="header_two md:block   hidden">
+        <div class="px-[3%]">
+            <div class="flex justify-between items-center ">
+                <div class="m-10">
+                    <ul class="flex">
+                        <li>
+                            <a href="mailto:Marketing.verlux@gmail.com " class="flex">
+
+                                <span class="elementor-icon-list-icon">
+                                    <!-- <i class="fa-solid fa-envelope  text-"></i> -->
+
+                                    <img src="/assets/icons/mail_black.png" alt="" class="w-8">
+                                </span> &nbsp;
+                                <span class="elementor-icon-list-text md:text-xl text-2xl text-[#22092C] ">
+                                    Marketing.verlux@gmail.com</span>
+                            </a>
+                        </li>
+                        &nbsp;
+                        &nbsp;
+                        <li class="elementor-icon-list-item elementor-inline-item flex gap-3">
+                            <a href="tel:+91 89202 53275" class="flex">
+
+                                <span class="elementor-icon-list-icon">
+                                    <img src="/assets/icons/telephone-call.png" alt="" class="w-8"> </span>
+                                <span class="elementor-icon-list-text text-xl text-[#22092C]">+91 89202 53275</span>
+                            </a>
+                            <a href="tel:+91 7303531447" class="flex">
+
+                                <span class="elementor-icon-list-icon">
+                                    <img src="/assets/icons/telephone-call.png" alt="" class="w-8"> </span>
+                                <span class="elementor-icon-list-text text-xl text-[#22092C]">+91 7303531447</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="flex md:mr-20 gap-6">
+
+
+
+
+
+
+                    <button class="group relative h-12 w-48 overflow-hidden rounded-lg bg-white text-xl shadow">
+                        <div
+                            class="absolute inset-0 w-3 bg-[#ffd7ab] transition-all duration-[250ms] ease-out group-hover:w-full">
+                        </div>
+                        <span class="relative text-black group-hover:text-black "><a href="/rent-my-booth.html">Rent
+                                My Booth</a></span>
+                    </button>
+                    <!-- <button class="group relative h-12 w-48 overflow-hidden rounded-lg bg-white text-xl shadow">
+                        <div
+                            class="absolute inset-0 w-3 bg-[#ffd7ab] transition-all duration-[250ms] ease-out group-hover:w-full">
+                        </div>
+                        <span class="relative text-black group-hover:text-black">Global
+                            Presence</span>
+                    </button> -->
+                    <button id="mybroch"
+                        class="group relative h-12 w-48 overflow-hidden rounded-lg bg-white text-xl shadow">
+                        <div
+                            class="absolute inset-0 w-3 bg-[#ffd7ab] transition-all duration-[250ms] ease-out group-hover:w-full">
+                        </div>
+                        <span class="relative text-black group-hover:text-black">Download Brochure</span>
+
+
+                    </button>
+                    <div id="myBrochre"
+                        class="  modalBrochure hidden fixed pt-[100px] left-[0] top-[0] w-full h-full overflow-auto bg-[rgba(0,0,0,0.4)] z-20">
+                        <div
+                            class="brochure-content bg-[#F7D6AA] bg-[url('./images/allimages/3dback.webp')] bg-no-repeat bg-center bg-top m-auto p-[50px] border-[1px] border-[solid] border-[#888] w-4/5">
+                            <span
+                                class="closeB text-[#fff] float-right text-[28px] font-bold focus:text-[#000] focus:no-underline cursor-pointer">&times;</span>
+
+                            <form class="px-8 pt-6 pb-8 mb-4 bg-white rounded w-3/5 block m-auto">
+
+
+                                <div>
+                                    <i
+                                        class="fas fa-arrow-alt-circle-down flex justify-center text-[#ffd7ab] text-4xl"></i>
+                                </div>
+
+                                <h3 class="text-5xl text-center text-[#ffd7ab]">Download Brochure</h3>
+                                <div class="mb-4 md:grid grid-cols-2 md:justify-center">
+                                    <div class="mb-4 md:mr-2 md:mb-0">
+                                        <br>
+                                        <label class="block mb-2 text-sm font-bold text-[#000]" for="Name">
+                                            Name
+                                        </label>
+                                        <input
+                                            class="w-full px-3 py-5 text-sm leading-tight text-gray-700 border-2 border-[#ffd7ab] shadow appearance-none focus:outline-none focus:shadow-outline rounded-xl "
+                                            id="Name" type="text" placeholder="Name" />
+                                    </div>
+                                    <div class="md:ml-2">
+                                        <br>
+                                        <label class="block mb-2 text-sm font-bold text-[#000]" for="PhoneNumber">
+                                            Phone Number
+                                        </label>
+                                        <input
+                                            class="w-full px-3 py-5 text-sm leading-tight text-gray-700 border-2 border-[#ffd7ab] rounded-xl shadow appearance-none focus:outline-none focus:shadow-outline"
+                                            id="phonenumber" type="text" placeholder="Phone Number" />
+                                    </div>
+                                    <div class="mb-4 md:mr-2">
+                                        <br>
+                                        <label class="block mb-2 text-sm font-bold text-[#000]" for="email">
+                                            Email
+                                        </label>
+                                        <input
+                                            class="w-full px-3 py-5 mb-3 text-sm leading-tight text-gray-700 border rounded border-2 border-[#ffd7ab] rounded-xl  shadow appearance-none focus:outline-none focus:shadow-outline"
+                                            id="email" type="email" placeholder="Email" />
+                                    </div>
+                                    <div class="mb-4">
+                                        <br>
+                                        <label class="block mb-2 text-sm font-bold text-[#000]" for="company_name">
+                                            Company Name
+                                        </label>
+                                        <input
+                                            class="w-full px-3 py-5 mb-3 text-sm leading-tight text-[#ffd7ab] border-2 border-[#ffd7ab] rounded-xl shadow appearance-none focus:outline-none focus:shadow-outline"
+                                            id="email" type="email" placeholder="Company Name" />
+                                    </div>
+                                </div>
+
+                                <div class="mb-6 text-center">
+                                    <a href="#_"
+                                        class="relative inline-flex items-center justify-start px-6 py-3 overflow-hidden font-medium transition-all bg-[#ffd7ab] rounded-xl group md:mt-10">
+                                        <span
+                                            class="absolute top-0 right-0 inline-block w-4 h-4 transition-all duration-500 ease-in-out bg-[#eaeaea] rounded group-hover:-mr-4 group-hover:-mt-4">
+                                            <span
+                                                class="absolute top-0 right-0 w-5 h-5 rotate-45 translate-x-1/2 -translate-y-1/2 bg-white"></span>
+                                        </span>
+                                        <span
+                                            class="absolute bottom-0 left-0 w-full h-full transition-all duration-500 ease-in-out delay-200 -translate-x-full translate-y-full bg-white rounded-2xl group-hover:mb-12 group-hover:translate-x-0"></span>
+                                        <span
+                                            class="relative w-full text-left text-white transition-colors duration-200 ease-in-out group-hover:text-[#ffd7ab]">Download
+                                            Brochure</span>
+                                    </a>
+                                </div>
+
+                            </form>
+                        </div>
+                    </div>
+
+
+                </div>
+
+
+
+            </div>
+        </div>
+    </div>
+    <!-- Navigation menu (default bg-primary) -->
+    <header class="demo demo1 sticky top-[-1px] z-10">
+        <nav class="navbar ">
+            <div class="navbar_half">
+
+
+                <a href="/"> <span class="logo md:text-3xl text-2xl">
+                        VERLUX STANDS
+                    </span></a>
+
+
+            </div>
+            <button class="navbar-toggler">
+                <i class="fa fa-bars" aria-hidden="true"></i>
+            </button>
+            <ul class="navbar-nav">
+                <li class="nav-close">
+                    <button class="btn-nav-close">
+                        <span class="close-btn">+</span>
+                    </button>
+                </li>
+
+                <li class="nav-item">
+                    <a href="#" class="nav-link flex items-baseline gap-2">CUSTOM EXHIBIT <svg
+                            xmlns="http://www.w3.org/2000/svg" :class="{'rotate-180': open, 'rotate-0': !open}"
+                            class="w-4 h-4 mt-1 transform rotate-0" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </a>
+                    <ul class="dropdown">
+                        <li class="nav-item">
+                            <a href="/custom-trade-show-booth-design.html" class="nav-link">Custom Trade Show Booth
+                                Design</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/custom-exhibit-rental-vs-buying.html" class="nav-link">Custom Exhibit Rental Vs
+                                Buying </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/custom-country-pavilion-booth-displays.html" class="nav-link">Custom Pavillion
+                                Booth Display </a>
+
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="/portfolio.html" class="nav-link">PORTFOLIO</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link flex items-baseline gap-2">RESOURCES <svg
+                            xmlns="http://www.w3.org/2000/svg" :class="{'rotate-180': open, 'rotate-0': !open}"
+                            class="w-4 h-4 mt-1 transform rotate-0" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg> </a>
+                    <ul class="dropdowns">
+                        <li class="nav-item">
+                            <a href="/aboutus.html" class="nav-link">About Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/trade-show-calender.html" class="nav-link">Trade Show Calendar</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/client-testimonials.html" class="nav-link">Testimonial </a>
+
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="/contact_us.html" class="nav-link">CONTACT</a>
+                </li>
+            </ul>
+
+        </nav>
+    </header>
+    <main>
+
+
+
+        <section class="company_banner">
+            <div class="relative">
+
+                <img src="/assets/images/header_back/About_0ur.png" alt="our_companybanner">
+
+                <div class="md:absolute md:top-10 md:left-[65rem] absolute top-[2rem] left-[25rem] md:w-full w-[19rem]">
+
+                    <video src="/assets/videos/standscrop.mp4" loop autoplay muted></video>
+                </div>
+
+
+            </div>
+
+        </section>
+
+        <section>
+            <div class="px-[3%]">
+                <!-- <div class="md:grid grid-cols-1 text-5xl text-[#a8cf45] ">
+
+                    <h2 class="text-start  md:mt-20  mb-10 ">
+                        How having a custom trade show booth design enhances your participation</h3>
+
+                </div> -->
+                <div class="md:grid grid-cols-3 gap-4">
+                    <div class="col-span-2   .. p-8">
+                        <p
+                            class="md:text-[16px] text-[14px] mx-[0] my-4 [box-shadow:#ffd7ab_0px_2px_8px_0px] p-4 m-4 rounded-2xl bg-[#fff]">
+                            Since 2008, Expo Stand Services has been offering top-notch <b> trade show booths </b> and
+                            services to exhibitors in the USA. Here at Expo Stand Services, you will get excellent and
+                            unique trade show booth designs. We help the exhibitors to shine out at the display ground,
+                            seamlessly, building new partnerships with potential clients & customers and maintaining the
+                            existing ones. With us, you can make the most of your brand presence at trade shows. For
+                            over 15 years, we have been among the best <b>trade booth design contractors </b> that offer
+                            the best trade show booth design and complete exhibiting solutions. We have a team of expert
+                            builders and creative stand designers that provide exhibitors with a variety of design
+                            options to choose the best for them based on their needs, business, industry, brand image
+                            and others.
+                        </p>
+                        <h2 class="md:text-4xl  text-3xl text-[#22092C] py-10 text-center ">Some of Our Trade Show
+                            Rental Booth Projects</h2>
+
+                        <div class="md:grid grid-cols-2 gap-2">
+                            <figure
+                                class="effect-hera relative float-left overflow-hidden mx-[1%] my-[10px] min-w-full max-w-[480px] max-h-[360px] w-[48%] h-auto bg-[#3085a3] text-center cursor-pointer rounded-2xl">
+                                <img src="/assets/images/PHOTO-2025-07-10-21-50-51_39.jpg" alt="img17"
+                                    class="relative block min-h-full max-w-full opacity-80 rounded-2xl object-cover" />
+                                <figcaption
+                                    class="p-[2em] text-[#fff] uppercase text-[1.25em] [backface-visibility:hidden] before:absolute before:top-2/4 before:left-2/4 before:w-[200px] before:h-[200px] before:border-[2px] before:border-[solid] before:border-[#fff] before:content-[''] before:opacity-0 before:[transition:opacity_0.35s,_transform_0.35s] before:[transform:translate3d(-50%,-50%,0)_rotate3d(0,0,1,-45deg)_scale3d(0,0,1)] before:origin-[50%]">
+                                    <h2>Tender <span>Hera</span></h2>
+                                    <p>
+                                        <a href="#" class="absolute top-[0] left-[0] w-full h-full"><i
+                                                class="fa fa-fw fa-file-pdf-o"></i></a>
+                                        <a href="#" class="absolute top-[0] left-[0] w-full h-full"><i
+                                                class="fa fa-fw fa-file-image-o"></i></a>
+                                        <a href="#" class="absolute top-[0] left-[0] w-full h-full"> <i
+                                                class="fa fa-fw fa-file-archive-o"></i></a>
+                                        <a href="#" class="absolute top-[0] left-[0] w-full h-full"><i
+                                                class="fa fa-fw fa-file-code-o"></i></a>
+                                    </p>
+                                </figcaption>
+                            </figure>
+
+                            <figure
+                                class="effect-hera relative float-left overflow-hidden mx-[1%] my-[10px] min-w-full max-w-[480px] max-h-[360px] w-[48%] h-auto bg-[#3085a3] text-center cursor-pointer rounded-2xl">
+                                <img src="/assets/images/PHOTO-2025-07-10-21-50-51_8.jpg" alt="img17"
+                                    class="relative block min-h-full max-w-full opacity-80 object-cover" />
+                                <figcaption
+                                    class="p-[2em] text-[#fff] uppercase text-[1.25em] [backface-visibility:hidden] before:absolute before:top-2/4 before:left-2/4 before:w-[200px] before:h-[200px] before:border-[2px] before:border-[solid] before:border-[#fff] before:content-[''] before:opacity-0 before:[transition:opacity_0.35s,_transform_0.35s] before:[transform:translate3d(-50%,-50%,0)_rotate3d(0,0,1,-45deg)_scale3d(0,0,1)] before:origin-[50%]">
+
+                                    <p>
+                                        <a href="#" class="absolute top-[0] left-[0] w-full h-full"><i
+                                                class="fa fa-fw fa-file-pdf-o"></i></a>
+                                        <a href="#" class="absolute top-[0] left-[0] w-full h-full"><i
+                                                class="fa fa-fw fa-file-image-o"></i></a>
+                                        <a href="#" class="absolute top-[0] left-[0] w-full h-full"> <i
+                                                class="fa fa-fw fa-file-archive-o"></i></a>
+                                        <a href="#" class="absolute top-[0] left-[0] w-full h-full"><i
+                                                class="fa fa-fw fa-file-code-o"></i></a>
+                                    </p>
+                                </figcaption>
+                            </figure>
+
+
+
+                        </div>
+                        <div>
+                            <div class="relative z-10 overflow-hidden rounded bg-[#ffd7ab] py-12 px-8 ">
+                                <div class="md:flex -mx-4">
+                                    <div class="w-[80%] px-4 ">
+                                        <span class="block mb-4 text-3xl font-medium text-white">
+                                            Have the exhibiting experts by your side for the best brand presence at
+                                            display ground
+                                        </span>
+
+                                    </div>
+                                    <div class=" px-4 ">
+                                        <div class="flex flex-wrap lg:justify-end">
+                                            <a href="#_"
+                                                class="relative inline-flex items-center justify-start px-12 py-5 overflow-hidden font-medium transition-all bg-[#fff] rounded-xl group ">
+                                                <span
+                                                    class="absolute top-0 right-0 inline-block w-4 h-4 transition-all duration-500 ease-in-out bg-[#ffd7ab] rounded group-hover:-mr-4 group-hover:-mt-4">
+                                                    <span
+                                                        class="absolute top-0 right-0 w-5 h-5 rotate-45 translate-x-1/2 -translate-y-1/2 bg-[#ffd7ab]"></span>
+                                                </span>
+                                                <span
+                                                    class="absolute bottom-0 left-0 w-full h-full transition-all duration-500 ease-in-out delay-200 -translate-x-full translate-y-full bg-white rounded-2xl group-hover:mb-12 group-hover:translate-x-0"></span>
+                                                <span
+                                                    class="relative w-full text-left text-[#000] transition-colors duration-200 ease-in-out group-hover:text-[#ffd7ab]">Contact
+                                                    Us</span>
+                                            </a>
+
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <span class="absolute top-0 left-0 z-[-1]">
+                                        <svg width="189" height="162" viewBox="0 0 189 162" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <ellipse cx="16" cy="-16.5" rx="173" ry="178.5"
+                                                transform="rotate(180 16 -16.5)" fill="url(#paint0_linear)" />
+                                            <defs>
+                                                <linearGradient id="paint0_linear" x1="-157" y1="-107.754" x2="98.5011"
+                                                    y2="-106.425" gradientUnits="userSpaceOnUse">
+                                                    <stop stop-color="white" stop-opacity="0.07" />
+                                                    <stop offset="1" stop-color="white" stop-opacity="0" />
+                                                </linearGradient>
+                                            </defs>
+                                        </svg>
+                                    </span>
+                                    <span class="absolute bottom-0 right-0 z-[-1]">
+                                        <svg width="191" height="208" viewBox="0 0 191 208" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <ellipse cx="173" cy="178.5" rx="173" ry="178.5"
+                                                fill="url(#paint0_linear)" />
+                                            <defs>
+                                                <linearGradient id="paint0_linear" x1="-3.27832e-05" y1="87.2457"
+                                                    x2="255.501" y2="88.5747" gradientUnits="userSpaceOnUse">
+                                                    <stop stop-color="white" stop-opacity="0.07" />
+                                                    <stop offset="1" stop-color="white" stop-opacity="0" />
+                                                </linearGradient>
+                                            </defs>
+                                        </svg>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <h3 class="py-10  md:text-4xl text-3xl text-[#22092C]">A dependable trade show booth builder in
+                            the USA</h3>
+                        <p
+                            class="md:text-[16px] text-[14px] mx-[0] my-4 [box-shadow:#ffd7ab_0px_2px_8px_0px] p-4 m-4 rounded-2xl bg-[#fff]">
+                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iure unde tempora ducimus totam
+                            possimus fuga aut dolor natus harum id laudantium quod magni animi, rerum nesciunt,
+                            similique ipsa magnam cupiditate ratione saepe, fugiat voluptates ex? Pariatur commodi
+                            tenetur officiis. Possimus beatae delectus nihil facere, totam animi numquam aut, debitis
+                            inventore vero dolorum architecto blanditiis assumenda! Eum ad itaque expedita omnis porro
+                            magni! Minus beatae mollitia assumenda nobis unde! Perferendis, at vitae! Error, numquam.
+                            Maxime sint eum minima reiciendis! Consequatur, sed!
+                        </p>
+
+                        <h3 class="py-10  md:text-4xl text-3xl text-[#22092C] ">Reaping the benefits of a customized
+                            booth design</h3>
+                        <p
+                            class="md:text-[16px] text-[14px] mx-[0] my-4 [box-shadow:#ffd7ab_0px_2px_8px_0px] p-4 m-4 rounded-2xl bg-[#fff]">
+                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iure unde tempora ducimus totam
+                            possimus fuga aut dolor natus harum id laudantium quod magni animi, rerum nesciunt,
+                            similique ipsa magnam cupiditate ratione saepe, fugiat voluptates ex? Pariatur commodi
+                            tenetur officiis. Possimus beatae delectus nihil facere, totam animi numquam aut, debitis
+                            inventore vero dolorum architecto blanditiis assumenda! Eum ad itaque expedita omnis porro
+                            magni! Minus beatae mollitia assumenda nobis unde! Perferendis, at vitae! Error, numquam.
+                            Maxime sint eum minima reiciendis! Consequatur, Lorem ipsum dolor, sit amet consectetur
+                            adipisicing elit. Quo cupiditate distinctio necessitatibus nulla, ullam nobis omnis! Fugiat
+                            rerum quo vel neque facere quisquam, cumque aliquid animi aperiam sequi aspernatur in fugit
+                            voluptates unde repellendus sint eos nobis eum temporibus recusandae.
+                        </p>
+
+
+
+
+                        <span
+                            class="text-[#fff] md:text-4xl  text-3xl px-10 text-center bg-gray-400 flex py-4 rounded-2xl">Connect
+                            with
+                            our team today and get the best quote for your brand exposition today!</span>
+                    </div>
+                    <div class="col-lg-4 d-flex md:py-10 py-10 align-items-end justify-content-center wow fadeInRight"
+                        data-wow-duration="1500ms ">
+
+                        <div class="sticky top-[20px]">
+                            <div class="contact-form rounded-3xl shadow-md shadow  px-10 ">
+
+                                <h2 class="md:text-5xl text-4xl text-black flex justify-center pb-5 ">Contact Us</h2>
+                                <div>
+
+                                    <form id="contactForm" enctype="multipart/form-data" novalidate>
+                                        <div id="errorBox" class="error-message">
+                                            <i class="fas fa-exclamation-circle"></i> Please fill out all fields
+                                            correctly.
+                                        </div>
+                                        <div >
+
+
+
+                                            <!-- Name -->
+                                            <!-- <label for="name">Name</label> -->
+                                            <div class="form-group">
+                                                <i class="fas fa-user"></i>
+                                                <input type="text" id="name" name="name" required
+                                                    pattern="^[A-Za-z\s]+$" title="Only letters and spaces"
+                                                    placeholder="Contact Name" class="text-2xl">
+                                            </div>
+                                            <div class="form-group">
+                                                <i class="fa-solid fa-building"></i>
+                                                <input type="text" id="name" name="name" required
+                                                    pattern="^[A-Za-z\s]+$" title="Only letters and spaces"
+                                                    placeholder="Company Name" class="text-2xl">
+                                            </div>
+
+                                            <!-- Email -->
+                                            <!-- <label for="email">Email</label> -->
+                                            <div class="form-group">
+                                                <i class="fas fa-envelope"></i>
+                                                <input type="email" id="email" name="email" required
+                                                    placeholder="you@example.com " class="text-2xl">
+                                            </div>
+
+                                            <!-- Phone -->
+                                            <!-- <label for="phone">Phone Number</label> -->
+                                            <div class="form-group">
+                                                <i class="fas fa-phone"></i>
+                                                <input type="tel" id="phone" name="phone" required pattern="\d{10,15}"
+                                                    title="10 to 15 digit number" placeholder="0123456789"
+                                                    class="text-2xl">
+                                            </div>
+
+                                            <!-- Email -->
+                                            <!-- <label for="email">Email</label> -->
+                                            <div class="form-group">
+                                                <i class="fa-solid fa-shop"></i>
+                                                <input type="text" id="exhibtion_name" name="exhibition_name" required
+                                                    placeholder="Exhibition Name" class="text-2xl">
+                                            </div>
+
+                                            <!-- Email -->
+                                            <!-- <label for="email">Email</label> -->
+                                            <div class="form-group">
+                                                <i class="fa-solid fa-calendar-days"></i>
+                                                <input type="text" id="event-city" name="event-city" required
+                                                    placeholder="Event City" class="text-2xl">
+                                            </div>
+                                            <div class="form-group">
+                                                <i class="fa-solid fa-chart-area"></i>
+                                                <input type="text" id="event-city" name="event-city" required
+                                                    placeholder="Stand Dimension & Area" class="text-2xl">
+                                            </div>
+                                            <div class="form-group">
+                                                <i class="fa-solid fa-dollar-sign"></i>
+                                                <input type="text" id="event-city" name="event-city" required
+                                                    placeholder="Stand Budget" class="text-2xl">
+                                            </div>
+                                        </div>
+                                        <!-- Message -->
+                                        <!-- <label for="message">Message</label> -->
+                                        <div class="form-group">
+                                            <i class="fas fa-comment-dots"></i>
+                                            <textarea id="message" name="message" rows="2" required minlength="10"
+                                                placeholder="Your message..." class="text-2xl"></textarea>
+                                        </div>
+
+
+
+
+                                        <!-- File -->
+                                        <!-- <label for="file">Choose File</label> -->
+                                        <div class="md:grid md:grid-cols-2 gap-4 flex m-10">
+                                            <div class="captcha-box ">
+                                                <span id="captcha"
+                                                    class="text-3xl font-bold mb-5 px-5 py-2.5 rounded mr-2.5 tracking-[10px]"></span>
+                                                <button id="refresh-btn" class="w-[3rem]">🔄</button>
+                                                <input type="text" id="captcha-input" placeholder="Enter Captcha"
+                                                    class="w-[120px] p-2 my-2 border border-gray-300  rounded-md">
+                                            </div>
+                                            <div class="form-group">
+                                                <i class="fas fa-paperclip"></i>
+                                                <input type="file" id="file" name="file" required
+                                                    accept=".jpg,.jpeg,.png,.pdf,.doc,.docx"
+                                                    title="Allowed: JPG, PNG, PDF, DOC" class="text-2xl">
+                                            </div>
+                                            <!-- <button id="verify-btn" class="required">Verify</button>
+                                        <p id="result-message"></p> -->
+                                        </div>
+
+
+
+
+                                        <button type="submit"
+                                            class="w-[13em] py-5 px-5 block m-auto bg-[#ffd7ab] text-[#fff]"><i
+                                                class="fas fa-paper-plane"></i> Submit</button>
+                                    </form>
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+        <section>
+
+            <img src="/assets/images/header_back/company-goal.png" alt="">
+        </section>
+
+    </main>
+
+
+    <footer class="pt-16 pb-7 bg-[#ffd7ab] relative">
+        <div class="px-[8%] bg-white ">
+
+            <div class="mx-auto max-w-full px-4 sm:px-6 lg:px-8 py-10">
+                <div class="flex flex-col sm:flex-row  justify-between pb-3 border-b border-gray-500 gap-8">
+                    <a href="/"> <span class="logo md:text-3xl text-2xl">
+                            VERLUX STANDS
+                        </span></a>
+
+                    <div class="flex  gap-4 items-center ">
+                        <a href="/aboutus.html" title="Facebook"
+                            class="  p-3 rounded-full bg-[#ffd7ab] text-gray-700 group transition-all duration-500 hover:bg-white-500 hover:text-white focus-within:outline-0 focus-within:bg-amber-500 focus-within:text-white">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"
+                                fill="none">
+                                <path
+                                    d="M13.077 10.7339L13.4445 8.43347H11.1808V6.93821C11.1808 6.30919 11.4968 5.69455 12.5074 5.69455H13.5511V3.73561C12.9433 3.64013 12.3292 3.58847 11.7136 3.58105C9.8505 3.58105 8.63412 4.68453 8.63412 6.67941V8.43347H6.56885V10.7339H8.63412V16.298H11.1808V10.7339H13.077Z"
+                                    fill="currentColor" />
+                            </svg>
+                        </a>
+                        <a href="javascript:;" title="Instagram"
+                            class="p-3 rounded-full bg-[#ffd7ab] text-gray-900 group transition-all duration-500 hover:bg-white-500 hover:text-white focus-within:outline-0 focus-within:bg-amber-500 focus-within:text-white bg-[#ffd7ab]">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"
+                                fill="none">
+                                <path
+                                    d="M7.7117 9.93956C7.7117 8.66117 8.76298 7.62456 10.0601 7.62456C11.3573 7.62456 12.4092 8.66117 12.4092 9.93956C12.4092 11.218 11.3573 12.2546 10.0601 12.2546C8.76298 12.2546 7.7117 11.218 7.7117 9.93956ZM6.44187 9.93956C6.44187 11.909 8.06177 13.5055 10.0601 13.5055C12.0585 13.5055 13.6784 11.909 13.6784 9.93956C13.6784 7.97012 12.0585 6.37367 10.0601 6.37367C8.06177 6.37367 6.44187 7.97012 6.44187 9.93956ZM12.9761 6.23228C12.976 6.3971 13.0256 6.55824 13.1184 6.69532C13.2113 6.83239 13.3433 6.93926 13.4978 7.00239C13.6523 7.06552 13.8223 7.08209 13.9863 7.05C14.1503 7.01791 14.301 6.93861 14.4193 6.82211C14.5377 6.70561 14.6182 6.55716 14.6509 6.39552C14.6836 6.23388 14.667 6.06632 14.603 5.91402C14.5391 5.76173 14.4307 5.63153 14.2917 5.53991C14.1527 5.44829 13.9892 5.39935 13.822 5.39928H13.8217C13.5975 5.39939 13.3825 5.48717 13.224 5.64336C13.0654 5.79954 12.9763 6.01136 12.9761 6.23228V6.23228ZM7.21337 15.5922C6.52637 15.5613 6.15296 15.4486 5.90481 15.3533C5.57583 15.2271 5.3411 15.0767 5.0943 14.8338C4.8475 14.591 4.69474 14.3598 4.56722 14.0356C4.47049 13.7912 4.35605 13.4231 4.32482 12.746C4.29066 12.014 4.28384 11.7941 4.28384 9.93962C4.28384 8.08512 4.29123 7.86584 4.32482 7.13323C4.35611 6.45617 4.47139 6.08878 4.56722 5.84362C4.6953 5.51939 4.84784 5.28806 5.0943 5.04484C5.34076 4.80162 5.57526 4.65106 5.90481 4.5254C6.15285 4.43006 6.52637 4.31728 7.21337 4.28651C7.95613 4.25284 8.17925 4.24612 10.0601 4.24612C11.9411 4.24612 12.1644 4.25339 12.9078 4.28651C13.5948 4.31734 13.9676 4.43095 14.2163 4.5254C14.5453 4.65106 14.7801 4.80195 15.0268 5.04484C15.2736 5.28773 15.4258 5.51939 15.5539 5.84362C15.6507 6.08806 15.7651 6.45617 15.7963 7.13323C15.8305 7.86584 15.8373 8.08512 15.8373 9.93962C15.8373 11.7941 15.8305 12.0134 15.7963 12.746C15.765 13.4231 15.65 13.7911 15.5539 14.0356C15.4258 14.3598 15.2733 14.5912 15.0268 14.8338C14.7804 15.0765 14.5453 15.2271 14.2163 15.3533C13.9683 15.4486 13.5948 15.5614 12.9078 15.5922C12.165 15.6258 11.9419 15.6326 10.0601 15.6326C8.1784 15.6326 7.9559 15.6258 7.21337 15.5922V15.5922ZM7.15503 3.03717C6.40489 3.07084 5.8923 3.18806 5.44465 3.35973C4.98105 3.53701 4.58859 3.77484 4.19641 4.16073C3.80423 4.54662 3.56352 4.93401 3.38364 5.39089C3.20945 5.83234 3.09051 6.33723 3.05635 7.07651C3.02162 7.81695 3.01367 8.05367 3.01367 9.93956C3.01367 11.8255 3.02162 12.0622 3.05635 12.8026C3.09051 13.542 3.20945 14.0468 3.38364 14.4882C3.56352 14.9448 3.80429 15.3327 4.19641 15.7184C4.58853 16.1041 4.98105 16.3416 5.44465 16.5194C5.89314 16.6911 6.40489 16.8083 7.15503 16.842C7.90675 16.8756 8.14655 16.884 10.0601 16.884C11.9737 16.884 12.2139 16.8762 12.9653 16.842C13.7155 16.8083 14.2277 16.6911 14.6756 16.5194C15.139 16.3416 15.5317 16.1043 15.9239 15.7184C16.3161 15.3325 16.5563 14.9448 16.7367 14.4882C16.9108 14.0468 17.0304 13.5419 17.064 12.8026C17.0981 12.0616 17.1061 11.8255 17.1061 9.93956C17.1061 8.05367 17.0981 7.81695 17.064 7.07651C17.0298 6.33717 16.9108 5.83206 16.7367 5.39089C16.5563 4.93428 16.3154 4.54723 15.9239 4.16073C15.5323 3.77423 15.139 3.53701 14.6762 3.35973C14.2277 3.18806 13.7154 3.07028 12.9658 3.03717C12.2145 3.00351 11.9743 2.99512 10.0607 2.99512C8.14712 2.99512 7.90675 3.00295 7.15503 3.03717Z"
+                                    fill="currentColor" />
+                            </svg>
+                        </a>
+                        <a href="javascript:;"
+                            class="p-3 rounded-full bg-[#ffd7ab] text-gray-700 group transition-all duration-500 hover:bg-white-500 hover:text-white focus-within:outline-0 focus-within:bg-amber-500 focus-within:text-white bg-[#ffd7ab]">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"
+                                fill="none">
+                                <path
+                                    d="M11.3214 8.93666L16.4919 3.05566H15.2667L10.7772 8.16205L7.19141 3.05566H3.05566L8.47803 10.7774L3.05566 16.9446H4.28097L9.022 11.552L12.8088 16.9446H16.9446L11.3211 8.93666H11.3214ZM9.64322 10.8455L9.09382 10.0765L4.72246 3.95821H6.60445L10.1322 8.8959L10.6816 9.66481L15.2672 16.083H13.3852L9.64322 10.8458V10.8455Z"
+                                    fill="currentColor" />
+                            </svg>
+                        </a>
+                        <a href="javascript:;"
+                            class="p-3 rounded-full bg-[#ffd7ab] text-gray-700 group transition-all duration-500 hover:bg-white-500 hover:text-white focus-within:outline-0 focus-within:bg-amber-500 focus-within:text-white ">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"
+                                fill="none">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M15.9326 5.13919C16.5664 5.31036 17.0646 5.80978 17.233 6.44286C17.5394 7.59178 17.5394 9.99044 17.5394 9.99044C17.5394 9.99044 17.5394 12.3891 17.233 13.538C17.0623 14.1734 16.5641 14.6729 15.9326 14.8417C14.7866 15.1489 10.1886 15.1489 10.1886 15.1489C10.1886 15.1489 5.59296 15.1489 4.44462 14.8417C3.81082 14.6705 3.31266 14.1711 3.14427 13.538C2.83789 12.3891 2.83789 9.99044 2.83789 9.99044C2.83789 9.99044 2.83789 7.59178 3.14427 6.44286C3.315 5.80744 3.81316 5.30801 4.44462 5.13919C5.59296 4.83203 10.1886 4.83203 10.1886 4.83203C10.1886 4.83203 14.7866 4.83203 15.9326 5.13919ZM12.539 9.99044L8.71982 12.2015V7.77936L12.539 9.99044Z"
+                                    fill="currentColor" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="py-14 flex flex-col lg:flex-row justify-between gap-8 border-b border-gray-500">
+                    <div
+                        class="w-full max-lg:mx-auto flex flex-col sm:flex-row max-lg:justify-between gap-4 md:gap-12 lg:gap-24 justify-around">
+                        <div>
+                            <h6 class="md:text-3xl text-2xl  text-[#22092C] mb-7 font-bold ">Resources</h6>
+                            <ul class="flex flex-col  gap-4">
+                                <li><a href="javascript:;"
+                                        class="md:text-2xl text-xl font-normal max-lg:text-center text-gray-900 whitespace-nowrap transition-all duration-300 hover:text-[#ffd7ab] focus-within:outline-0 focus-within:text-amber-400">
+                                        Company Profile</a>
+                                </li>
+                                <li><a href="javascript:;"
+                                        class="md:text-2xl text-xl font-normal max-lg:text-center text-gray-900 whitespace-nowrap transition-all duration-300 hover:text-[#ffd7ab] focus-within:outline-0 focus-within:text-amber-400">
+                                        What we do</a>
+                                </li>
+                                <li><a href="javascript:;"
+                                        class="md:text-2xl text-xl font-normal max-lg:text-center text-gray-900 whitespace-nowrap transition-all duration-300 hover:text-[#ffd7ab] focus-within:outline-0 focus-within:text-amber-400">Global
+                                        Presences </a>
+                                </li>
+                                <li><a href="/major-exhibiting-City.html"
+                                        class="md:text-2xl text-xl font-normal max-lg:text-center text-gray-900 whitespace-nowrap transition-all duration-300 hover:text-[#ffd7ab] focus-within:outline-0 focus-within:text-amber-400">
+                                        Major exhibiting City</a>
+                                </li>
+                                <li><a href="javascript:;"
+                                        class="md:text-2xl text-xl font-normal max-lg:text-center text-gray-900 whitespace-nowrap transition-all duration-300 hover:text-[#ffd7ab] focus-within:outline-0 focus-within:text-amber-400">
+                                        Blog</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h6 class="md:text-3xl text-2xl font-bold text-[#22092C] mb-7 ">Services</h6>
+                            <ul class="flex flex-col gap-4 ">
+                                <li><a href="javascript:;"
+                                        class="md:text-2xl text-xl font-normal text-gray-900 whitespace-nowrap transition-all duration-300 hover:text-[#ffd7ab] focus-within:outline-0 focus-within:text-amber-400">Booth
+                                        Consultation</a></li>
+                                <li><a href="javascript:;"
+                                        class="md:text-2xl text-xl font-normal text-gray-900 whitespace-nowrap transition-all duration-300 hover:text-[#ffd7ab] focus-within:outline-0 focus-within:text-amber-400">Trade
+                                        Show Booth Design</a></li>
+                                <li><a href="javascript:;"
+                                        class="md:text-2xl text-xl font-normal text-gray-900 whitespace-nowrap transition-all duration-300 hover:text-[#ffd7ab] focus-within:outline-0 focus-within:text-amber-400">Booth
+                                        Construction</a></li>
+                                <li><a href="javascript:;"
+                                        class="md:text-2xl text-xl font-normal text-gray-900 whitespace-nowrap transition-all duration-300 hover:text-[#ffd7ab] focus-within:outline-0 focus-within:text-amber-400">Graphic
+                                        Production</a></li>
+                                <li><a href="javascript:;"
+                                        class="md:text-2xl text-xl font-normal text-gray-900 whitespace-nowrap transition-all duration-300 hover:text-[#ffd7ab] focus-within:outline-0 focus-within:text-amber-400">Project
+                                        Management</a></li>
+                                <li><a href="javascript:;"
+                                        class="md:text-2xl text-xl font-normal text-gray-900 whitespace-nowrap transition-all duration-300 hover:text-[#ffd7ab] focus-within:outline-0 focus-within:text-amber-400">Install/Dismantle/Shipping</a>
+                                </li>
+                                <li><a href="javascript:;"
+                                        class="md:text-2xl text-xl font-normal text-gray-900 whitespace-nowrap transition-all duration-300 hover:text-[#ffd7ab] focus-within:outline-0 focus-within:text-amber-400">
+                                        Audio Visual</a></li>
+                            </ul>
+                        </div>
+                        <!-- <div>
+                            <h6 class="md:text-3xl text-2xl font-bold text-[#22092C] mb-7">Rent By Size</h6>
+                            <ul class="flex flex-col gap-4 ">
+                                <li><a href="javascript:;"
+                                        class="md:text-2xl text-xl font-normal text-gray-900 whitespace-nowrap transition-all duration-300 hover:text-[#ffd7ab] focus-within:outline-0 focus-within:text-amber-400">10x10</a>
+                                </li>
+                                <li><a href="javascript:;"
+                                        class="md:text-2xl text-xl font-normal text-gray-900 whitespace-nowrap transition-all duration-300 hover:text-[#ffd7ab] focus-within:outline-0 focus-within:text-amber-400">10x20</a>
+                                </li>
+                                <li><a href="javascript:;"
+                                        class="md:text-2xl text-xl font-normal text-gray-900 whitespace-nowrap transition-all duration-300 hover:text-[#ffd7ab] focus-within:outline-0 focus-within:text-amber-400">20x20</a>
+                                </li>
+                                <li><a href="javascript:;"
+                                        class="md:text-2xl text-xl font-normal text-gray-900 whitespace-nowrap transition-all duration-300 hover:text-[#ffd7ab] focus-within:outline-0 focus-within:text-amber-400">20x30</a>
+                                </li>
+                                <li><a href="javascript:;"
+                                        class="md:text-2xl text-xl font-normaltext-gray-900 whitespace-nowrap transition-all duration-300 hover:text-[#ffd7ab] focus-within:outline-0 focus-within:text-amber-400">30x30</a>
+                                </li>
+                                <li><a href="javascript:;"
+                                        class="md:text-2xl text-xl font-normal text-gray-900 whitespace-nowrap transition-all duration-300 hover:text-[#ffd7ab] focus-within:outline-0 focus-within:text-amber-400">40x40</a>
+                                </li>
+                                <li><a href="javascript:;"
+                                        class="md:text-2xl text-xl font-normal text-gray-900 whitespace-nowrap transition-all duration-300 hover:text-[#ffd7ab] focus-within:outline-0 focus-within:text-amber-400">50x50</a>
+                                </li>
+                            </ul>
+                        </div> -->
+                        <div>
+                            <h6 class="md:text-3xl text-2xl font-bold text-[#22092C] mb-7 ">Contact Details</h6>
+                            <ul class="flex flex-col gap-4 ">
+                                <li><a href="mailto:Marketing.verlux@gmail.com " class="flex">
+
+                                        <span class="elementor-icon-list-icon">
+                                            <i class="fa-solid fa-envelope-circle-check"></i></span>
+                                        &nbsp;
+                                        <span class="elementor-icon-list-text md:text-2xl text-xl">
+                                            Marketing.verlux@gmail.com</span>
+                                    </a></li>
+                                <li class="elementor-icon-list-item elementor-inline-item  flex gap-3">
+                                    <a href="tel:+917303531447" class="flex">
+
+                                        <span class="elementor-icon-list-icon ">
+                                            <i class="fa-solid fa-phone-volume"></i></span>
+                                        &nbsp;
+                                        <span class="elementor-icon-list-text md:text-2xl text-xl">+91 7303531447</span>
+                                    </a>
+                                    <a href="tel:+91 89202 53275" class="flex">
+
+                                        <span class="elementor-icon-list-icon ">
+                                            <i class="fa-solid fa-phone-volume"></i></span>
+                                        &nbsp;
+                                        <span class="elementor-icon-list-text md:text-2xl text-xl">+91 89202
+                                            53275</span>
+                                    </a>
+                                </li>
+                                <!-- 
+                                <li class="elementor-icon-list-item elementor-inline-item flex">
+
+                                    <span class="elementor-icon-list-icon">
+                                        <i class="fa-solid fa-location-dot"></i></span>
+                                    &nbsp;
+                                    <span class="elementor-icon-list-text md:text-2xl text-xl">
+                                        <b>Building No./Flat No.:</b> RC-443 <br>
+                                        <b>Road/Street: </b> KHORA GAON <br>
+                                        <b>Locality/Sub Locality: </b> Khora Colony Chowk kala enclave <br>
+                                        <b> City/Town/Village: </b>Noida <br>
+                                        <b>District: </b> Gautambuddha Nagar <br>
+                                        <b>State:</b> Uttar Pradesh <br>
+
+                                        <b>PIN Code :</b>201309
+                                    </span>
+
+                                </li> -->
+
+                            </ul>
+
+
+
+                        </div>
+                        <div>
+                            <div class="md:w-full  lg:max-w-md max-lg:mx-auto ">
+                                <h6 class="text-lg font-medium text-[#ffd7ab] mb-7">Google Map</h6>
+                                <div class="bg-[#ffd7ab] rounded-3xl p-5">
+                                    <form action="#" class="flex flex-col gap-5">
+                                        <div class="relative">
+
+                                        </div>
+                                        <div
+                                            class="flex flex-col min-[540px]:flex-row items-center justify-between gap-3">
+
+
+
+                                        </div>
+
+                                        <iframe
+                                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14044.026694420456!2d77.53956874698424!3d28.358647845743263!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cc75cd5f393d7%3A0xe6ae70064e15e731!2sSector%2017A%2C%20Gautam%20Buddha%20Nagar%2C%20Uttar%20Pradesh%20203201!5e0!3m2!1sen!2sin!4v1754636690213!5m2!1sen!2sin"
+                                            style="border:0;" loading="lazy"
+                                            referrerpolicy="no-referrer-when-downgrade " class="w-[104%]"></iframe>
+
+
+                                    </form>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+                <div class="flex flex-col-reverse sm:flex-row items-center justify-center gap-5 pt-7">
+                    <span class="pt-5 text-gray-400 py-5">Terms & Conditions
+                        Privacy Policy
+                        Disclaimer
+                        Contact</span>
+                    <span class="text-lg font-normal text-gray-400">
+                        <a href="https://pagedone.io/">©2025 VERLUX STANDS PRIVATE LIMITED</a>
+                    </span>
+                    <div class="relative  text-gray-500 focus-within:text-gray-900 ">
+                        <div class="absolute inset-y-0 right-6 flex items-center pl-3 pointer-events-none ">
+
+
+
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="/script.js"></script>
+
+</body>
+
+</html>
