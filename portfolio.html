@@ -5,15 +5,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Verlux Stand Company</title>
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css"
-            integrity="sha512-rqQltXRuHxtPWhktpAZxLHUVJ3Eombn3hvk9PHjV/N5DMUYnzKPC1i3ub0mEXgFzsaZNeJcoE0YHq0j/GFsdGg=="
-            crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/brands.min.css"
-        integrity="sha512-EJp8vMVhYl7tBFE2rgNGb//drnr1+6XKMvTyamMS34YwOEFohhWkGq13tPWnK0FbjSS6D8YoA3n3bZmb3KiUYA=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&display=swap" rel="stylesheet"> -->
+     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/style.css">
+
+    <link rel="stylesheet" href="./style.css">
 
 
     <!-- tailwind script -->
@@ -21,264 +24,207 @@
 </head>
 
 <body>
-  
-     <!-- Top bar header -->
-    <div class="header_two md:block   hidden">
+
+ 
+   <header class="sticky top-[1px]" style="z-index: 1000 !important;">
         <div class="px-[3%]">
-            <div class="flex justify-between items-center ">
-                <div class="m-10">
-                    <ul class="flex">
-                        <li>
-                            <a href="mailto:Marketing.verlux@gmail.com " class="flex">
-
-                                <span class="elementor-icon-list-icon">
-                                    <!-- <i class="fa-solid fa-envelope  text-"></i> -->
-
-                                    <img src="/assets/icons/mail_black.png" alt="" class="w-8">
-                                </span> &nbsp;
-                                <span class="elementor-icon-list-text md:text-xl text-2xl text-[#22092C] ">
-                                    Marketing.verlux@gmail.com</span>
-                            </a>
-                        </li>
-                        &nbsp;
-                        &nbsp;
-                        <li class="elementor-icon-list-item elementor-inline-item flex gap-3">
-                            <a href="tel:+91 89202 53275" class="flex">
-
-                                <span class="elementor-icon-list-icon">
-                                    <img src="/assets/icons/telephone-call.png" alt="" class="w-8"> </span>
-                                <span class="elementor-icon-list-text text-xl text-[#22092C]">+91 89202 53275</span>
-                            </a>
-                            <a href="tel:+91 7303531447" class="flex">
-
-                                <span class="elementor-icon-list-icon">
-                                    <img src="/assets/icons/telephone-call.png" alt="" class="w-8"> </span>
-                                <span class="elementor-icon-list-text text-xl text-[#22092C]">+91 7303531447</span>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="flex md:mr-20 gap-6">
-
-
-
-
-
-
-                    <button class="group relative h-12 w-48 overflow-hidden rounded-lg bg-white text-xl shadow">
-                        <div
-                            class="absolute inset-0 w-3 bg-[#ffd7ab] transition-all duration-[250ms] ease-out group-hover:w-full">
+            <nav class="navbar">
+                <div class="navbar_half">
+                    <div class="container_menu">
+                        <div class="logo">
+                            <a href="/"><span class="text-white logo-image text-4xl z-1 relative cursor-pointer leading-[2.5]">VERLUXSTAND</span></a>
                         </div>
-                        <span class="relative text-black group-hover:text-black "><a href="/rent-my-booth.html">Rent
-                                My Booth</a></span>
-                    </button>
-                    <!-- <button class="group relative h-12 w-48 overflow-hidden rounded-lg bg-white text-xl shadow">
-                        <div
-                            class="absolute inset-0 w-3 bg-[#ffd7ab] transition-all duration-[250ms] ease-out group-hover:w-full">
+                        <input type="checkbox" name="check" id="check">
+
+                        <div class="nav-btn">
+                            <div class="nav-links">
+                                <ul>
+                                    <li class="nav-link" style="--i: .6s">
+                                        <a href="./custom-exhibit-rental-vs-buying.html">Custom Exhibit</a>
+                                    </li>
+                                    <li id="dropdownToggle"  class="relative nav-link" style="--i: .85s">
+                                        <a role="button">
+                                            <span>Resources</span>
+                                            <i class="fas fa-caret-down"></i>
+                                        <!-- Dropdown Menu -->
+                                        <div id="dropdownMenu" class="dropdownMenu left-0 top-full mt-2 hidden rounded-lg shadow-lg ">
+                                            <ul class="py-2">
+                                                <li>
+                                                    <a href="./aboutus.html" class="block px-4 py-2 ">About Us</a>
+                                                </li>
+                                                <li>
+                                                    <a href="./custom-trade-show-booth-design.html" class="block px-4 py-2">Trade Shows</a>
+                                                </li>
+                                                <li>
+                                                    <a href="./client-testimonials.html" class="block px-4 py-2">Testimonial</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        </a>
+
+                                    </li>
+
+                                    <script>
+                                    const toggleBtn = document.getElementById('dropdownToggle');
+                                    const dropdownMenu = document.getElementById('dropdownMenu');
+
+                                    // Toggle on button click
+                                    toggleBtn.addEventListener('click', () => {
+                                        dropdownMenu.classList.toggle('hidden');
+                                    });
+
+                                    // Close on outside click
+                                    document.addEventListener('click', (event) => {
+                                        if (!toggleBtn.contains(event.target) && !dropdownMenu.contains(event.target)) {
+                                        dropdownMenu.classList.add('hidden');
+                                        }
+                                    });
+
+                                    // Close on Escape key
+                                    document.addEventListener('keydown', (event) => {
+                                        if (event.key === 'Escape') {
+                                        dropdownMenu.classList.add('hidden');
+                                        }
+                                    });
+                                    </script>
+
+                                    <!-- <li class="nav-link" style="--i: 1.1s">
+                                        <a href="#">Services<i class="fas fa-caret-down"></i></a>
+                                        <div class="dropdown">
+                                            <ul>
+                                                <li class="dropdown-link">
+                                                    <a href="#">Link 1</a>
+                                                </li>
+                                                <li class="dropdown-link">
+                                                    <a href="#">Link 2</a>
+                                                </li>
+                                                <li class="dropdown-link">
+                                                    <a href="#">Link 3<i class="fas fa-caret-down"></i></a>
+                                                    <div class="dropdown second">
+                                                        <ul>
+                                                            <li class="dropdown-link">
+                                                                <a href="#">Link 1</a>
+                                                            </li>
+                                                            <li class="dropdown-link">
+                                                                <a href="#">Link 2</a>
+                                                            </li>
+                                                            <li class="dropdown-link">
+                                                                <a href="#">Link 3</a>
+                                                            </li>
+                                                            <li class="dropdown-link">
+                                                                <a href="#">More<i class="fas fa-caret-down"></i></a>
+                                                                <div class="dropdown second">
+                                                                    <ul>
+                                                                        <li class="dropdown-link">
+                                                                            <a href="#">Link 1</a>
+                                                                        </li>
+                                                                        <li class="dropdown-link">
+                                                                            <a href="#">Link 2</a>
+                                                                        </li>
+                                                                        <li class="dropdown-link">
+                                                                            <a href="#">Link 3</a>
+                                                                        </li>
+                                                                        <div class="arrow"></div>
+                                                                    </ul>
+                                                                </div>
+                                                            </li>
+                                                            <div class="arrow"></div>
+                                                        </ul>
+                                                    </div>
+                                                </li>
+                                                <li class="dropdown-link">
+                                                    <a href="#">Link 4</a>
+                                                </li>
+                                                <div class="arrow"></div>
+                                            </ul>
+                                        </div>
+                                    </li> -->
+                                    <li class="nav-link" style="--i: 1.35s">
+                                        <a href="/portfolio.html">Portfolio</a>
+                                    </li>
+                                    <li class="nav-link" style="--i: 1.35s">
+                                        <a href="/contact_us.html">Contact</a>
+                                    </li>
+                                </ul>
+                            </div>
+
                         </div>
-                        <span class="relative text-black group-hover:text-black">Global
-                            Presence</span>
-                    </button> -->
-                    <button id="mybroch"
-                        class="group relative h-12 w-48 overflow-hidden rounded-lg bg-white text-xl shadow">
-                        <div
-                            class="absolute inset-0 w-3 bg-[#ffd7ab] transition-all duration-[250ms] ease-out group-hover:w-full">
-                        </div>
-                        <span class="relative text-black group-hover:text-black">Download Brochure</span>
 
-
-                    </button>
-                    <div id="myBrochre"
-                        class="  modalBrochure hidden fixed pt-[100px] left-[0] top-[0] w-full h-full overflow-auto bg-[rgba(0,0,0,0.4)] z-20">
-                        <div
-                            class="brochure-content bg-[#F7D6AA] bg-[url('./images/allimages/3dback.webp')] bg-no-repeat bg-center bg-top m-auto p-[50px] border-[1px] border-[solid] border-[#888] w-4/5">
-                            <span
-                                class="closeB text-[#fff] float-right text-[28px] font-bold focus:text-[#000] focus:no-underline cursor-pointer">&times;</span>
-
-                            <form class="px-8 pt-6 pb-8 mb-4 bg-white rounded w-3/5 block m-auto">
-
-
-                                <div>
-                                    <i
-                                        class="fas fa-arrow-alt-circle-down flex justify-center text-[#ffd7ab] text-4xl"></i>
-                                </div>
-
-                                <h3 class="text-5xl text-center text-[#ffd7ab]">Download Brochure</h3>
-                                <div class="mb-4 md:grid grid-cols-2 md:justify-center">
-                                    <div class="mb-4 md:mr-2 md:mb-0">
-                                        <br>
-                                        <label class="block mb-2 text-sm font-bold text-[#000]" for="Name">
-                                            Name
-                                        </label>
-                                        <input
-                                            class="w-full px-3 py-5 text-sm leading-tight text-gray-700 border-2 border-[#ffd7ab] shadow appearance-none focus:outline-none focus:shadow-outline rounded-xl "
-                                            id="Name" type="text" placeholder="Name" />
-                                    </div>
-                                    <div class="md:ml-2">
-                                        <br>
-                                        <label class="block mb-2 text-sm font-bold text-[#000]" for="PhoneNumber">
-                                            Phone Number
-                                        </label>
-                                        <input
-                                            class="w-full px-3 py-5 text-sm leading-tight text-gray-700 border-2 border-[#ffd7ab] rounded-xl shadow appearance-none focus:outline-none focus:shadow-outline"
-                                            id="phonenumber" type="text" placeholder="Phone Number" />
-                                    </div>
-                                    <div class="mb-4 md:mr-2">
-                                        <br>
-                                        <label class="block mb-2 text-sm font-bold text-[#000]" for="email">
-                                            Email
-                                        </label>
-                                        <input
-                                            class="w-full px-3 py-5 mb-3 text-sm leading-tight text-gray-700 border rounded border-2 border-[#ffd7ab] rounded-xl  shadow appearance-none focus:outline-none focus:shadow-outline"
-                                            id="email" type="email" placeholder="Email" />
-                                    </div>
-                                    <div class="mb-4">
-                                        <br>
-                                        <label class="block mb-2 text-sm font-bold text-[#000]" for="company_name">
-                                            Company Name
-                                        </label>
-                                        <input
-                                            class="w-full px-3 py-5 mb-3 text-sm leading-tight text-[#ffd7ab] border-2 border-[#ffd7ab] rounded-xl shadow appearance-none focus:outline-none focus:shadow-outline"
-                                            id="email" type="email" placeholder="Company Name" />
-                                    </div>
-                                </div>
-
-                                <div class="mb-6 text-center">
-                                    <a href="#_"
-                                        class="relative inline-flex items-center justify-start px-6 py-3 overflow-hidden font-medium transition-all bg-[#ffd7ab] rounded-xl group md:mt-10">
-                                        <span
-                                            class="absolute top-0 right-0 inline-block w-4 h-4 transition-all duration-500 ease-in-out bg-[#eaeaea] rounded group-hover:-mr-4 group-hover:-mt-4">
-                                            <span
-                                                class="absolute top-0 right-0 w-5 h-5 rotate-45 translate-x-1/2 -translate-y-1/2 bg-white"></span>
-                                        </span>
-                                        <span
-                                            class="absolute bottom-0 left-0 w-full h-full transition-all duration-500 ease-in-out delay-200 -translate-x-full translate-y-full bg-white rounded-2xl group-hover:mb-12 group-hover:translate-x-0"></span>
-                                        <span
-                                            class="relative w-full text-left text-white transition-colors duration-200 ease-in-out group-hover:text-[#ffd7ab]">Download
-                                            Brochure</span>
-                                    </a>
-                                </div>
-
-                            </form>
+                        <div class="hamburger-menu-container">
+                            <div class="hamburger-menu">
+                                <div></div>
+                            </div>
                         </div>
                     </div>
 
-
                 </div>
-
-
-
-            </div>
+            </nav>
         </div>
-    </div>
-
-    <!-- Navigation menu (default bg-primary) -->
-    <header class="demo demo1 sticky top-[-1px] z-10">
-        <nav class="navbar ">
-            <div class="navbar_half">
-
-
-                <a href="/"> <span class="logo md:text-3xl text-2xl">
-                        VERLUX STANDS
-                    </span></a>
-
-
-            </div>
-            <button class="navbar-toggler">
-                <i class="fa fa-bars" aria-hidden="true"></i>
-            </button>
-            <ul class="navbar-nav">
-                <li class="nav-close">
-                    <button class="btn-nav-close">
-                        <span class="close-btn">+</span>
-                    </button>
-                </li>
-
-                <li class="nav-item">
-                    <a href="#" class="nav-link flex items-baseline gap-2">CUSTOM EXHIBIT <svg
-                            xmlns="http://www.w3.org/2000/svg" :class="{'rotate-180': open, 'rotate-0': !open}"
-                            class="w-4 h-4 mt-1 transform rotate-0" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
-                            <polyline points="6 9 12 15 18 9"></polyline>
-                        </svg>
-                    </a>
-                    <ul class="dropdown">
-                        <li class="nav-item">
-                            <a href="/custom-trade-show-booth-design.html" class="nav-link">Custom Trade Show Booth
-                                Design</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="/custom-exhibit-rental-vs-buying.html" class="nav-link">Custom Exhibit Rental Vs
-                                Buying </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="/custom-country-pavilion-booth-displays.html" class="nav-link">Custom Pavillion
-                                Booth Display </a>
-
-                        </li>
-                    </ul>
-                </li>
-                <li class="nav-item">
-                    <a href="/portfolio.html" class="nav-link">PORTFOLIO</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#" class="nav-link flex items-baseline gap-2">RESOURCES <svg
-                            xmlns="http://www.w3.org/2000/svg" :class="{'rotate-180': open, 'rotate-0': !open}"
-                            class="w-4 h-4 mt-1 transform rotate-0" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
-                            <polyline points="6 9 12 15 18 9"></polyline>
-                        </svg> </a>
-                    <ul class="dropdowns">
-                        <li class="nav-item">
-                            <a href="/aboutus.html" class="nav-link">About Us</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="/trade-show-calender.html" class="nav-link">Trade Show Calendar</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="/client-testimonials.html" class="nav-link">Testimonial </a>
-
-                        </li>
-                    </ul>
-                </li>
-                <li class="nav-item">
-                    <a href="/contact_us.html" class="nav-link">CONTACT</a>
-                </li>
-            </ul>
-
-        </nav>
     </header>
-    <section class="portfolios">
+   
+    
+   
+    <!-- Contact Form Header Section -->
+   <section class="bg-gray-50 py-16 contact-hero">
+        <div class="container mx-auto px-6 text-center">
+            <!-- Hero Heading -->
+            <h1 class="text-4xl md:text-5xl font-bold text-gray-900 leading-tight mb-4">
+                <span class="heading-1">Stories of Success</span>
+            </h1>
+            <p class="my-5"><span class="block text-3xl m-5 text-gray-200"> Where Vision Meets Craftsmanship</span></p>
 
-        <div>
-            <div>
-                <div>
 
-                    <img src="/assets/images/header_back/portfolio.png" alt="portfolio_image">
+            <!-- Description -->
+            <p class="text-1xl text-gray-300 max-w-6xl mx-auto mb-10">
+                Journey through our collection of groundbreaking exhibition designs. Each project tells a unique story of collaboration, innovation, and remarkable results.
+            </p>
+
+        </div>
+
+        <div class="container kpi-card-body mx-auto px-6 my-40 text-center" style="display: flex;justify-content: space-between;align-items: center;flex-wrap: wrap;gap:5px;">
+            <!-- Card 1 -->
+            <div class="kpi-card border mx-auto rounded-2xl shadow hover:shadow-lg transition" style="padding: 20px 10px;display: flex;justify-content: center;align-items: center;">
+                <div class="" style="align-items: center;">
+                    <h2 class="text-7xl font-bold mb-2">500+</h2>
+                <p class="text-gray-300 my-4 text-4xl">Projects Completed</p>
                 </div>
-
-
-
+            </div>
+            <!-- Card 1 -->
+            <div class="kpi-card border mx-auto rounded-2xl shadow hover:shadow-lg transition" style="padding: 20px 10px;display: flex;justify-content: center;align-items: center;">
+                <div class="" style="align-items: center;">
+                    <h2 class="text-7xl font-bold mb-2">50+</h2>
+                <p class="text-gray-300 my-4 text-4xl">Countries Served</p>
+                </div>
+            </div>
+            <!-- Card 1 -->
+            <div class="kpi-card border mx-auto rounded-2xl shadow hover:shadow-lg transition" style="padding: 20px 10px;display: flex;justify-content: center;align-items: center;">
+                <div class="" style="align-items: center;">
+                    <h2 class="text-7xl font-bold mb-2">98%</h2>
+                <p class="text-gray-300 my-4 text-4xl">Client Satisfaction</p>
+                </div>
+            </div>
+            <!-- Card 1 -->
+            <div class="kpi-card border rounded-2xl mx-auto shadow hover:shadow-lg transition" style="padding: 20px 10px;display:flex;justify-content: center;align-items: center;">
+                <div class="" style="align-items: center;">
+                    <h2 class="text-7xl font-bold mb-2">15+</h2>
+                <p class="text-gray-300 my-4 text-4xl">Years Experience</p>
+                </div>
             </div>
 
-
-
-
+            
         </div>
     </section>
 
-    <section class="tabs_back bg-[#c0c0c045]">
+
+
+    <section class="tabs_back  ">
         <div class="px-[3%]">
             <div class="md:grid grid-cols-6 gap-4">
 
                 <div class="col-start-2 col-span-4 ...">
-
                     <h2 class="text-center md:text-5xl text-3xl text-[#22092C]  pt-20 pb-10">Checkout out some of
                         our successful trade show
                         booth rentals</h2>
-
-
                 </div>
 
             </div>
@@ -309,13 +255,13 @@
             <div class="tab-wrapper">
                 <div class="flex gap-[10px] mb-[20px] max-w-[600px] md:w-full w-[50%] px-[3%]">
                     <button
-                        class="tab flex-[1] p-[12px] bg-[#000] text-[#eee] border-[none] rounded-[6px] cursor-pointer relative [transition:all_0.3s_ease] tab active bg-[#ffd7ab] border-b-[#ffd7ab] text-black text-xl md:text-2xl"
+                        class="tab flex-[1] p-[12px] trade-show-toggle-buttons text-[#eee] border-[none] rounded-[6px] cursor-pointer relative [transition:all_0.3s_ease] tab active  border-b-[#ffd7ab]  text-xl md:text-2xl"
                         data-tab="home">Custom </button>
                     <button
-                        class="tab flex-[1] p-[12px] bg-[#000] text-[#eee] border-[none] rounded-[6px] cursor-pointer relative [transition:all_0.3s_ease] k text-xl md:text-2xl"
+                        class="tab flex-[1] p-[12px] trade-show-toggle-buttons text-[#eee] border-[none] rounded-[6px] cursor-pointer relative [transition:all_0.3s_ease] k text-xl md:text-2xl"
                         data-tab="profile">Pavillion</button>
                     <button
-                        class="tab flex-[1] p-[12px] bg-[#000] text-[#eee] border-[none] rounded-[6px] cursor-pointer relative [transition:all_0.3s_ease] k text-xl md:text-2xl"
+                        class="tab flex-[1] p-[12px] trade-show-toggle-buttons text-[#eee] border-[none] rounded-[6px] cursor-pointer relative [transition:all_0.3s_ease] k text-xl md:text-2xl"
                         data-tab="settings">Modular</button>
                 </div>
 
@@ -428,9 +374,9 @@
 
 
     </section>
-
-    <footer class="pt-16 pb-7 bg-[#ffd7ab] relative">
-        <div class="px-[8%] bg-white ">
+   
+    <footer class="relative">
+        <div class="pt-16 px-[8%] footer-container">
 
             <div class="mx-auto max-w-full px-4 sm:px-6 lg:px-8 py-10">
                 <div class="flex flex-col sm:flex-row  justify-between pb-3 border-b border-gray-500 gap-8">
@@ -483,7 +429,7 @@
                         <div>
                             <h6 class="md:text-3xl text-2xl  text-[#22092C] mb-7 font-bold ">Resources</h6>
                             <ul class="flex flex-col  gap-4">
-                                <li><a href="/aboutus.html"
+                                <li><a href="javascript:;"
                                         class="md:text-2xl text-xl font-normal max-lg:text-center text-gray-900 whitespace-nowrap transition-all duration-300 hover:text-[#ffd7ab] focus-within:outline-0 focus-within:text-amber-400">
                                         Company Profile</a>
                                 </li>
@@ -638,28 +584,20 @@
                     </div>
 
                 </div>
-                <div class="flex flex-col-reverse sm:flex-row items-center justify-center gap-5 pt-7">
-                    <span class="pt-5 text-gray-400 py-5">Terms & Conditions
+                <div class="flex text-[12px] flex-col-reverse sm:flex-row items-center justify-center gap-5 pt-7">
+                    <span class="pt-5 text-gray-700 py-5">Terms & Conditions
                         Privacy Policy
                         Disclaimer
                         Contact</span>
-                    <span class="text-lg font-normal text-gray-400">
+                    <span class="font-normal text-gray-500">
                         <a href="https://pagedone.io/">©2025 VERLUX STANDS PRIVATE LIMITED</a>
                     </span>
-                    <div class="relative  text-gray-500 focus-within:text-gray-900 ">
-                        <div class="absolute inset-y-0 right-6 flex items-center pl-3 pointer-events-none ">
-
-
-
-
-                        </div>
-
-                    </div>
                 </div>
             </div>
         </div>
     </footer>
-  script src="https://md-aqil.github.io/images/swiper.min.js"></script>
+
+    <script src="https://md-aqil.github.io/images/swiper.min.js"></script>
     <script src="https://unpkg.com/@themesberg/flowbite@1.2.0/dist/flowbite.bundle.js"></script>
 
     <script src="/script.js"></script>

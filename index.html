@@ -25,297 +25,135 @@
 
 <body>
 
-    <!-- Top bar header -->
-    <div class="header_two md:block   hidden">
+ 
+   <header class="sticky top-[1px]" style="z-index: 1000 !important;">
         <div class="px-[3%]">
-            <div class="flex justify-between items-center ">
-                <div class="mx-10 my-5">
-                    <ul class="flex">
-                        <li>
-                            <a href="mailto:Marketing.verlux@gmail.com " class="flex">
-
-                                <span class="elementor-icon-list-icon">
-                                    <!-- <i class="fa-solid fa-envelope  text-"></i> -->
-
-                                    <img src="/assets/icons/mail_black.png" alt="" class="w-8">
-                                </span> &nbsp;
-                                <span class="elementor-icon-list-text md:text-xl text-2xl text-[#22092C] ">
-                                    Marketing.verlux@gmail.com</span>
-                            </a>
-                        </li>
-                        &nbsp;
-                        &nbsp;
-                        <li class="elementor-icon-list-item elementor-inline-item flex gap-3">
-                            <a href="tel:+91 89202 53275" class="flex">
-
-                                <span class="elementor-icon-list-icon">
-                                    <img src="/assets/icons/telephone-call.png" alt="" class="w-8"> </span>
-                                <span class="elementor-icon-list-text text-xl text-[#22092C]">+91 89202 53275</span>
-                            </a>
-                            <a href="tel:+91 7303531447" class="flex">
-
-                                <span class="elementor-icon-list-icon">
-                                    <img src="/assets/icons/telephone-call.png" alt="" class="w-8"> </span>
-                                <span class="elementor-icon-list-text text-xl text-[#22092C]">+91 7303531447</span>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="flex md:mr-20 gap-6">
-
-
-
-
-
-
-                    <button class="group relative h-12 w-48 overflow-hidden rounded-lg bg-white text-xl shadow">
-                        <div
-                            class="absolute inset-0 w-3 bg-[#ffd7ab] transition-all duration-[250ms] ease-out group-hover:w-full">
+            <nav class="navbar">
+                <div class="navbar_half">
+                    <div class="container_menu">
+                        <div class="logo">
+                            <a href="/"><span class="text-white logo-image text-4xl z-1 relative cursor-pointer leading-[2.5]">VERLUXSTAND</span></a>
                         </div>
-                        <span class="relative text-black group-hover:text-black "><a href="/rent-my-booth.html">Rent
-                                My Booth</a></span>
-                    </button>
-                    <!-- <button class="group relative h-12 w-48 overflow-hidden rounded-lg bg-white text-xl shadow">
-                        <div
-                            class="absolute inset-0 w-3 bg-[#ffd7ab] transition-all duration-[250ms] ease-out group-hover:w-full">
+                        <input type="checkbox" name="check" id="check">
+
+                        <div class="nav-btn">
+                            <div class="nav-links">
+                                <ul>
+                                    <li class="nav-link" style="--i: .6s">
+                                        <a href="./custom-exhibit-rental-vs-buying.html">Custom Exhibit</a>
+                                    </li>
+                                    <li id="dropdownToggle"  class="relative nav-link" style="--i: .85s">
+                                        <a role="button">
+                                            <span>Resources</span>
+                                            <i class="fas fa-caret-down"></i>
+                                        <!-- Dropdown Menu -->
+                                        <div id="dropdownMenu" class="dropdownMenu left-0 top-full mt-2 hidden rounded-lg shadow-lg ">
+                                            <ul class="py-2">
+                                                <li>
+                                                    <a href="./aboutus.html" class="block px-4 py-2 ">About Us</a>
+                                                </li>
+                                                <li>
+                                                    <a href="./custom-trade-show-booth-design.html" class="block px-4 py-2">Trade Shows</a>
+                                                </li>
+                                                <li>
+                                                    <a href="./client-testimonials.html" class="block px-4 py-2">Testimonial</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        </a>
+
+                                    </li>
+
+                                    <script>
+                                    const toggleBtn = document.getElementById('dropdownToggle');
+                                    const dropdownMenu = document.getElementById('dropdownMenu');
+
+                                    // Toggle on button click
+                                    toggleBtn.addEventListener('click', () => {
+                                        dropdownMenu.classList.toggle('hidden');
+                                    });
+
+                                    // Close on outside click
+                                    document.addEventListener('click', (event) => {
+                                        if (!toggleBtn.contains(event.target) && !dropdownMenu.contains(event.target)) {
+                                        dropdownMenu.classList.add('hidden');
+                                        }
+                                    });
+
+                                    // Close on Escape key
+                                    document.addEventListener('keydown', (event) => {
+                                        if (event.key === 'Escape') {
+                                        dropdownMenu.classList.add('hidden');
+                                        }
+                                    });
+                                    </script>
+                                    
+                                    <li class="nav-link" style="--i: 1.35s">
+                                        <a href="/portfolio.html">Portfolio</a>
+                                    </li>
+                                    <li class="nav-link" style="--i: 1.35s">
+                                        <a href="/contact_us.html">Contact</a>
+                                    </li>
+                                </ul>
+                            </div>
+
                         </div>
-                        <span class="relative text-black group-hover:text-black">Global
-                            Presence</span>
-                    </button> -->
-                    <button id="mybroch"
-                        class="group modalBrochure-btn relative h-12 w-48 overflow-hidden rounded-lg bg-white text-xl shadow">
-                        <div
-                            class="absolute inset-0 w-3 bg-[#ffd7ab] transition-all duration-[250ms] ease-out group-hover:w-full">
-                        </div>
-                        <span class="relative text-black group-hover:text-black">Download Brochure</span>
 
-
-                    </button>
-                    <div id="myBrochre"
-                        class="modalBrochure hidden fixed pt-[100px] left-[0] top-[0] w-full h-full overflow-auto bg-[rgba(0,0,0,0.4)] z-20">
-                        <div
-                            class="brochure-content bg-[#F7D6AA] bg-[url('./images/allimages/3dback.webp')] bg-no-repeat bg-center bg-top m-auto p-[50px] border-[1px] border-[solid] border-[#888] w-4/5">
-                            <span
-                                class="closeB text-[#fff] float-right text-[28px] font-bold focus:text-[#000] focus:no-underline cursor-pointer">&times;</span>
-
-                            <form class="px-8 pt-6 pb-8 mb-4 bg-white rounded w-3/5 block m-auto">
-
-
-                                <div>
-                                    <i
-                                        class="fas fa-arrow-alt-circle-down flex justify-center text-[#ffd7ab] text-4xl"></i>
-                                </div>
-
-                                <h3 class="text-5xl text-center text-[#ffd7ab]">Download Brochure</h3>
-                                <div class="mb-4 md:grid grid-cols-2 md:justify-center">
-                                    <div class="mb-4 md:mr-2 md:mb-0">
-                                        <br>
-                                        <label class="block mb-2 text-sm font-bold text-[#000]" for="Name">
-                                            Name
-                                        </label>
-                                        <input
-                                            class="w-full px-3 py-5 text-sm leading-tight text-gray-700 border-2 border-[#ffd7ab] shadow appearance-none focus:outline-none focus:shadow-outline rounded-xl "
-                                            id="Name" type="text" placeholder="Name" />
-                                    </div>
-                                    <div class="md:ml-2">
-                                        <br>
-                                        <label class="block mb-2 text-sm font-bold text-[#000]" for="PhoneNumber">
-                                            Phone Number
-                                        </label>
-                                        <input
-                                            class="w-full px-3 py-5 text-sm leading-tight text-gray-700 border-2 border-[#ffd7ab] rounded-xl shadow appearance-none focus:outline-none focus:shadow-outline"
-                                            id="phonenumber" type="text" placeholder="Phone Number" />
-                                    </div>
-                                    <div class="mb-4 md:mr-2">
-                                        <br>
-                                        <label class="block mb-2 text-sm font-bold text-[#000]" for="email">
-                                            Email
-                                        </label>
-                                        <input
-                                            class="w-full px-3 py-5 mb-3 text-sm leading-tight text-gray-700 border rounded border-2 border-[#ffd7ab] rounded-xl  shadow appearance-none focus:outline-none focus:shadow-outline"
-                                            id="email" type="email" placeholder="Email" />
-                                    </div>
-                                    <div class="mb-4">
-                                        <br>
-                                        <label class="block mb-2 text-sm font-bold text-[#000]" for="company_name">
-                                            Company Name
-                                        </label>
-                                        <input
-                                            class="w-full px-3 py-5 mb-3 text-sm leading-tight text-[#ffd7ab] border-2 border-[#ffd7ab] rounded-xl shadow appearance-none focus:outline-none focus:shadow-outline"
-                                            id="email" type="email" placeholder="Company Name" />
-                                    </div>
-                                </div>
-
-                                <div class="mb-6 text-center">
-                                    <a href="#_"
-                                        class="relative inline-flex items-center justify-start px-6 py-3 overflow-hidden font-medium transition-all bg-[#ffd7ab] rounded-xl group md:mt-10">
-                                        <span
-                                            class="absolute top-0 right-0 inline-block w-4 h-4 transition-all duration-500 ease-in-out bg-[#eaeaea] rounded group-hover:-mr-4 group-hover:-mt-4">
-                                            <span
-                                                class="absolute top-0 right-0 w-5 h-5 rotate-45 translate-x-1/2 -translate-y-1/2 bg-white"></span>
-                                        </span>
-                                        <span
-                                            class="absolute bottom-0 left-0 w-full h-full transition-all duration-500 ease-in-out delay-200 -translate-x-full translate-y-full bg-white rounded-2xl group-hover:mb-12 group-hover:translate-x-0"></span>
-                                        <span
-                                            class="relative w-full text-left text-white transition-colors duration-200 ease-in-out group-hover:text-[#ffd7ab]">Download
-                                            Brochure</span>
-                                    </a>
-                                </div>
-
-                            </form>
+                        <div class="hamburger-menu-container">
+                            <div class="hamburger-menu">
+                                <div></div>
+                            </div>
                         </div>
                     </div>
 
-
                 </div>
-
-
-
-            </div>
+            </nav>
         </div>
-    </div>
-
-    <!-- Navigation menu (default bg-primary) -->
-    <header class="demo demo1 top-[-1px] z-10">
-        <nav class="navbar ">
-            <div class="navbar_half">
-
-
-                <a href="/"> <span class="logo md:text-3xl text-2xl">
-                        VERLUX STANDS
-                    </span></a>
-
-
-            </div>
-            <button class="navbar-toggler">
-                <i class="fa fa-bars" aria-hidden="true"></i>
-            </button>
-            <ul class="navbar-nav">
-                <li class="nav-close">
-                    <button class="btn-nav-close">
-                        <span class="close-btn">+</span>
-                    </button>
-                </li>
-
-                <li class="nav-item">
-                    <a href="#" class="nav-link flex items-baseline gap-2">CUSTOM EXHIBIT <svg
-                            xmlns="http://www.w3.org/2000/svg" :class="{'rotate-180': open, 'rotate-0': !open}"
-                            class="w-4 h-4 mt-1 transform rotate-0" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
-                            <polyline points="6 9 12 15 18 9"></polyline>
-                        </svg>
-                    </a>
-                    <ul class="dropdown">
-                        <li class="nav-item">
-                            <a href="/custom-trade-show-booth-design.html" class="nav-link">Custom Trade Show Booth
-                                Design</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="/custom-exhibit-rental-vs-buying.html" class="nav-link">Custom Exhibit Rental Vs
-                                Buying </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="/custom-country-pavilion-booth-displays.html" class="nav-link">Custom Pavillion
-                                Booth Display </a>
-
-                        </li>
-                    </ul>
-                </li>
-                <li class="nav-item">
-                    <a href="/portfolio.html" class="nav-link">PORTFOLIO</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#" class="nav-link flex items-baseline gap-2">RESOURCES <svg
-                            xmlns="http://www.w3.org/2000/svg" :class="{'rotate-180': open, 'rotate-0': !open}"
-                            class="w-4 h-4 mt-1 transform rotate-0" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
-                            <polyline points="6 9 12 15 18 9"></polyline>
-                        </svg> </a>
-                    <ul class="dropdowns">
-                        <li class="nav-item">
-                            <a href="/aboutus.html" class="nav-link">About Us</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="/trade-show-calender.html" class="nav-link">Trade Show Calendar</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="/client-testimonials.html" class="nav-link">Testimonial </a>
-
-                        </li>
-                    </ul>
-                </li>
-                <li class="nav-item">
-                    <a href="/contact_us.html" class="nav-link">CONTACT</a>
-                </li>
-            </ul>
-
-        </nav>
     </header>
-    <!-- Hero Section -->
    
- 
-    <style>
-        .diagonal-clip {
-            clip-path: polygon(0 0, 100% 0, 60% 100%, 0 100%);
-        }
-        .diagonal-clip-video {
-            clip-path: polygon(60% 0, 100% 0, 100% 100%, 40% 100%);
-        }
-        
-       
-        
-        @media (max-width: 768px) {
-            .diagonal-clip,
-            .diagonal-clip-video {
-                clip-path: none;
-            }
-           
-        }
-    </style>
- 
-    <div class="wrap-home relative h-[500px] overflow-hidden">
+    <div class="wrap-home h-[95vh] overflow-hidden">
         <!-- Left section with text -->
-        <div class="absolute inset-0 diagonal-clip left-section">
+        <div class="hero-parts inset-0 diagonal-clip left-section">
            <div class="text-white p-12">
-                <div class="max-w-3xl text-center py-5">
+                <div class="max-w-3xl py-5">
                     <!-- Main Title -->
-                    <h1 class="text-6xl text-transparent left-section-heading mb-6">
+                    <h1 class="text-8xl text-transparent left-section-heading mb-6">
                     <span class="head-1">VERLUX</span> <span class="head-2">STAND</span>
                     </h1>
 
                     <!-- Subtitle -->
-                    <p class="mt-20 leading-relaxed" style="font-size: 2rem;">
+                    <p class="mt-20 text-white leading-relaxed" style="font-size: 2rem;">
                     Crafting Extraordinary Exhibition Experiences with Unparalleled Luxury and Innovation.
                     Where Premium Design Meets Cutting-Edge Technology for Unforgettable Brand Presence.
                     </p>
 
                     <!-- Action Buttons -->
-                   <div class="grid grid-cols-2 gap-4 my-10">
+                   <div class="my-20" style="display: flex;flex-wrap:wrap;justify-content:space-around;gap:15px;align-items: center;">
                         <a href="/rent-my-booth.html" class="bg-[#ceac76] text-black font-semibold py-3 px-6 rounded-md hover:bg-[#a1805f] transition-colors">
                             Rent My Booth
                         </a>
-                        <button class="font-semibold modalBrochure-btn py-3 px-6 rounded-md download-brochur-btn">
+                        <a role="button" onclick="toggleModal(true)" class="font-semibold modalBrochure-btn py-3 px-6 rounded-md download-brochur-btn">
                             Download Brochure
-                        </button>
+                        </a>
                     </div>
 
 
                     <!-- Stats -->
-                    <div class="mt-12 grid kpi-card-body grid-cols-3 gap-8 text-center">
-                    <div class="space-y-2 kpi-card">
-                        <h3 class="text-4xl ">90+</h3>
-                        <p class="text-lg text-gray-300">Premium Clients</p>
+                    <div class="mt-12 kpi-card-body flex flex-wrap justify-around items-center gap-4 text-center">
+                        <div class="space-y-2 kpi-card w-full md:w-auto md:flex-1">
+                            <h3 class="text-4xl">90+</h3>
+                            <p class="text-lg text-gray-300">Premium Clients</p>
+                        </div>
+                        <div class="space-y-2 kpi-card w-full md:w-auto md:flex-1">
+                            <h3 class="text-4xl">1500+</h3>
+                            <p class="text-lg text-gray-300">Global Projects</p>
+                        </div>
+                        <div class="space-y-2 kpi-card w-full md:w-auto md:flex-1">
+                            <h3 class="text-4xl">15+</h3>
+                            <p class="text-lg text-gray-300">Countries Served</p>
+                        </div>
                     </div>
-                    <div class="space-y-2 kpi-card">
-                        <h3 class="text-4xl ">1500+</h3>
-                        <p class="text-lg text-gray-300">Global Projects</p>
-                    </div>
-                    <div class="space-y-2 kpi-card">
-                        <h3 class="text-4xl ">15+</h3>
-                        <p class="text-lg text-gray-300">Countries Served</p>
-                    </div>
-                    </div>
+
  
                 </div>
             </div>
@@ -323,24 +161,28 @@
         </div>
 
         <!-- Right section with video -->
-        <div class="absolute inset-0 diagonal-clip-video">
-            <video 
-                class="w-full h-full object-cover" 
-                autoplay 
-                muted 
-                loop 
-                playsinline>
-                <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" type="video/mp4">
-                <source src="https://sample-videos.com/zip/10/mp4/SampleVideo_1280x720_1mb.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
+        <div class="hero-parts inset-0 diagonal-clip-video flex justify-end">
+                
+                <video id="video_" class="h-full object-cover" 
+                    autoplay 
+                    loop 
+                    muted
+                    playsinline>
+                    <source src="./assets/videos/videoplayback.mp4" type="video/mp4">
+                    <source src="./assets/videos/videoplayback.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
             <!-- Optional overlay for better video contrast -->
             <div class="absolute inset-0 bg-black bg-opacity-20"></div>
+            <button class="absolute" onclick="toggleAudio(this)">
+                    <i id="muteIcon" class="fas fa-volume-mute text-xl group-hover:scale-110 transition-transform duration-200"></i>
+            </button>
+
         </div>
     </div>
 
     <!-- main cont  ent section -->
-    <main class="about-two bg-[radial-gradient(circle_at_13%_47%,_rgba(140,_140,_140,0.03)_0%,_rgba(140,_140,_140,0.03)_25%,transparent_25%,_transparent_100%),radial-gradient(circle_at_28%_63%,_rgba(143,_143,_143,0.03)_0%,_rgba(143,_143,_143,0.03)_16%,transparent_16%,_transparent_100%),radial-gradient(circle_at_81%_56%,_rgba(65,_65,_65,0.03)_0%,_rgba(65,_65,_65,0.03)_12%,transparent_12%,_transparent_100%),radial-gradient(circle_at_26%_48%,_rgba(60,_60,_60,0.03)_0%,_rgba(60,_60,_60,0.03)_6%,transparent_6%,_transparent_100%),radial-gradient(circle_at_97%_17%,_rgba(150,_150,_150,0.03)_0%,_rgba(150,_150,_150,0.03)_56%,transparent_56%,_transparent_100%),radial-gradient(circle_at_50%_100%,_rgba(25,_25,_25,0.03)_0%,_rgba(25,_25,_25,0.03)_36%,transparent_36%,_transparent_100%),radial-gradient(circle_at_55%_52%,_rgba(69,_69,_69,0.03)_0%,_rgba(69,_69,_69,0.03)_6%,transparent_6%,_transparent_100%),linear-gradient(90deg,_rgb(255,255,255),rgb(255,255,255))] bg-fixed">
+    <main class="about-two bg-fixsed">
 
         <!-- About section for the home page -->
         <section class="about-two">
@@ -382,7 +224,7 @@
                                 <span
                                     class="absolute bottom-0 left-0 w-full h-full transition-all duration-500 ease-in-out delay-200 -translate-x-full translate-y-full bg-white rounded-3 group-hover:mb-12 group-hover:translate-x-0"></span>
                                 <span
-                                    class="relative w-full text-left text-black  transition-colors duration-200 ease-in-out group-hover:text-[#000] text-xl font-bold">Know
+                                    class="relative w-full text-left text-black  transition-colors duration-200 ease-in-out group-hover:text-[#926440] text-xl font-bold">Know
                                     More</span>
                             </a>
                         </div><!-- /.about-two__content -->
@@ -397,13 +239,22 @@
                                 class="about-two__image--2 absolute -top-[30px] md:right-[100px] md:right-[16px] z-10"
                                 alt="Awesome Image">
 
-                            <div
-                                class="about-two__image-content flex md:w-[370px] w-[280px] h-[320px] border-[2px] border-[solid] border-[#eaeaea] p-[30px] absolute bottom-[20px] left-[70px] -translate-y-1/2">
+                           <div class="about-two__image-content flex md:w-[370px] w-[280px] h-[320px] border-[2px] border-[solid] border-[#eaeaea] p-[30px] absolute bottom-[20px] -translate-y-1/2">
 
-                                <div
-                                    class="about-two__image-decor w-[148px] h-[48px] border-r-8 border-[#ffd7ab] bg-[-webkit-gradient(linear,_left_top,_left_bottom,_color-stop(19%,_#f2ebe8),_to(white))] bg-[linear-gradient(180deg,_#f2ebe8_19%,_white_100%)] mr-[15px]">
+                                <div class="about-two__image-decor w-[148px] h-[48px] border-r-8 border-[#ffd7ab] bg-[-webkit-gradient(linear,_left_top,_left_bottom,_color-stop(19%,_#f2ebe8),_to(white))] bg-[linear-gradient(180deg,_#f2ebe8_19%,_white_100%)] mr-[15px]">
                                 </div>
-
+                                <!-- /.about-two__image-decor -->
+                                <div class="about-two__image-content-main flex ">
+                                    <div class="about-two__image-content-left text-[60px] text-[#302e2f] leading-[1em] font-['Prata']">
+                                        E
+                                    </div>
+                                    <div class="about-two__image-content-right ml-[10px]">
+                                        <span class="block text-[18px] text-[#302e2f] leading-[1em] font-['prata']">stablished</span>
+                                        <div class="about-two__year text-[24px] mt-[15px]">
+                                            <span class="block text-[18px] text-[#302e2f] leading-[1em] font-['Prata']">1864</span>
+                                        </div>
+                                    </div>
+                                </div><!-- /.about-two__image-content-main -->
                             </div><!-- /.about-two__image-content -->
                         </div><!-- /.about-two__image -->
                     </div><!-- /.col-lg-6 -->
@@ -412,12 +263,97 @@
         </section>
 
 
-        <section class="md:pb-20 md:pt-20 bg-[#c0c0c045]">
+        <section class="md:pb-20 md:pt-20">
 
-            <div class="md:px-[8%] px-[16%]  md:flex md:gap-8 grid gap-4  justify-center">
+            <div class="md:px-[8%] px-[10%]  md:flex md:gap-8 grid gap-4  justify-center">
                 <div class="group cursor-pointer transform transition-all duration-500 hover:scale-105 hover:-rotate-1">
-                    <div
-                        class="text-white rounded-3xl border border-white/10 bg-gradient-to-br from-[#010101] via-[#090909] to-[#010101] shadow-2xl duration-700 z-10 relative backdrop-blur-xl hover:border-white/25 overflow-hidden hover:shadow-white/5 hover:shadow-3xl w-[350px]">
+                    <div class="text-white rounded-3xl border border-white/10 about-cards shadow-2xl duration-700 z-10 relative backdrop-blur-xl hover:border-white/25 overflow-hidden hover:shadow-white/5 hover:shadow-3xl w-[30rem]">
+                        <div class="absolute inset-0 z-0 overflow-hidden">
+                            <div
+                                class="absolute inset-0 bg-gradient-to-tr from-white/5 to-white/10 opacity-40 group-hover:opacity-60 transition-opacity duration-500">
+                            </div>
+
+                            <div style="animation-delay: 0.5s;"
+                                class="absolute -bottom-20 -left-20 w-48 h-48 rounded-full bg-gradient-to-tr from-white/10 to-transparent blur-3xl opacity-30 group-hover:opacity-50 transform group-hover:scale-110 transition-all duration-700 animate-bounce">
+                            </div>
+
+                            <div class="absolute top-10 left-10 w-16 h-16 rounded-full bg-white/5 blur-xl animate-ping">
+                            </div>
+                            <div style="animation-delay: 1s;"
+                                class="absolute bottom-16 right-16 w-12 h-12 rounded-full bg-white/5 blur-lg animate-ping">
+                            </div>
+
+                            <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent transform -skew-x-12 translate-x-full group-hover:translate-x-[-100%] transition-transform duration-1000">
+                            </div>
+                        </div>
+
+                        <div class="p-8 relative z-10">
+                            <div class="flex flex-col items-center text-center">
+                                <div class="relative mb-6">
+                                    <div class="absolute inset-0 rounded-full border-2 border-white/20 animate-ping">
+                                    </div>
+                                    <div style="animation-delay: 0.5s;"
+                                        class="absolute inset-0 rounded-full border border-white/10 animate-pulse">
+                                    </div>
+
+                                    <div
+                                        class="p-6 rounded-full backdrop-blur-lg border border-white/20 bg-gradient-to-br from-black/80 to-black/60 shadow-2xl transform group-hover:rotate-12 group-hover:scale-110 transition-all duration-500 hover:shadow-white/20">
+                                        <div class="transform group-hover:rotate-180 transition-transform duration-700">
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                                class="w-8 h-8 fill-current text-[#ffd7ab] group-hover:text-gray-200 transition-colors duration-300 filter drop-shadow-lg">
+                                                <path
+                                                    d="M5.164 0L.16 18.928L18.836 24L23.84 5.072L5.164 0ZM14.023 15.208L8.792 13.469L10.436 8.152L15.667 9.891L14.023 15.208Z">
+                                                </path>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="mb-4 transform group-hover:scale-105 transition-transform duration-300">
+                                    <p
+                                        class="text-4xl font-bold bg-gradient-to-r from-white via-[#ffd7ab] to-[#ffd7ab] bg-clip-text text-transparent animate-pulse">
+                                        Roblox
+                                    </p>
+                                </div>
+
+                                <div class="space-y-1 max-w-sm">
+                                    <!-- <p
+                                        class="text-gray-300 text-sm font-semibold leading-relaxed transform group-hover:text-gray-200 transition-colors duration-300">
+                                        Showcase your
+                                    </p> -->
+
+                                    <p
+                                        class="text-gray-300 text-xl leading-relaxed transform group-hover:text-gray-200 transition-colors duration-300">
+                                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illo, eveniet Lorem
+                                        ipsum dolor, sit amet consectetur adipisicing elit. Libero quidem omnis nulla
+                                        modi maxime saepe in eaque nostrum ex minus!
+                                    </p>
+
+                                </div>
+
+                                <div
+                                    class="mt-6 w-1/3 h-0.5 bg-gradient-to-r from-transparent via-white to-transparent rounded-full transform group-hover:w-1/2 group-hover:h-1 transition-all duration-500 animate-pulse">
+                                </div>
+
+                                <div
+                                    class="flex space-x-2 mt-4 opacity-60 group-hover:opacity-100 transition-opacity duration-300">
+                                    <div class="w-2 h-2 bg-[#ffd7ab] rounded-full animate-bounce"></div>
+                                    <div style="animation-delay: 0.1s;"
+                                        class="w-2 h-2 bg-[#ffd7ab] rounded-full animate-bounce"></div>
+                                    <div style="animation-delay: 0.2s;"
+                                        class="w-2 h-2 bg-[#ffd7ab] rounded-full animate-bounce"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="absolute top-0 left-0 w-20 h-20 bg-gradient-to-br from-white/10 to-transparent rounded-br-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                        </div>
+                        <div class="absolute bottom-0 right-0 w-20 h-20 bg-gradient-to-tl from-white/10 to-transparent rounded-tl-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                        </div>
+                    </div>
+                </div>
+                <div class="group cursor-pointer transform transition-all duration-500 hover:scale-105 hover:-rotate-1">
+                    <div class="text-white rounded-3xl border border-white/10 about-cards via-[#090909] to-[#010101] shadow-2xl duration-700 z-10 relative backdrop-blur-xl hover:border-white/25 overflow-hidden hover:shadow-white/5 hover:shadow-3xl w-[30rem]">
                         <div class="absolute inset-0 z-0 overflow-hidden">
                             <div
                                 class="absolute inset-0 bg-gradient-to-tr from-white/5 to-white/10 opacity-40 group-hover:opacity-60 transition-opacity duration-500">
@@ -506,98 +442,7 @@
                     </div>
                 </div>
                 <div class="group cursor-pointer transform transition-all duration-500 hover:scale-105 hover:-rotate-1">
-                    <div
-                        class="text-white rounded-3xl border border-white/10 bg-gradient-to-br from-[#010101] via-[#090909] to-[#010101] shadow-2xl duration-700 z-10 relative backdrop-blur-xl hover:border-white/25 overflow-hidden hover:shadow-white/5 hover:shadow-3xl w-[350px]">
-                        <div class="absolute inset-0 z-0 overflow-hidden">
-                            <div
-                                class="absolute inset-0 bg-gradient-to-tr from-white/5 to-white/10 opacity-40 group-hover:opacity-60 transition-opacity duration-500">
-                            </div>
-
-                            <div style="animation-delay: 0.5s;"
-                                class="absolute -bottom-20 -left-20 w-48 h-48 rounded-full bg-gradient-to-tr from-white/10 to-transparent blur-3xl opacity-30 group-hover:opacity-50 transform group-hover:scale-110 transition-all duration-700 animate-bounce">
-                            </div>
-
-                            <div class="absolute top-10 left-10 w-16 h-16 rounded-full bg-white/5 blur-xl animate-ping">
-                            </div>
-                            <div style="animation-delay: 1s;"
-                                class="absolute bottom-16 right-16 w-12 h-12 rounded-full bg-white/5 blur-lg animate-ping">
-                            </div>
-
-                            <div
-                                class="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent transform -skew-x-12 translate-x-full group-hover:translate-x-[-100%] transition-transform duration-1000">
-                            </div>
-                        </div>
-
-                        <div class="p-8 relative z-10">
-                            <div class="flex flex-col items-center text-center">
-                                <div class="relative mb-6">
-                                    <div class="absolute inset-0 rounded-full border-2 border-white/20 animate-ping">
-                                    </div>
-                                    <div style="animation-delay: 0.5s;"
-                                        class="absolute inset-0 rounded-full border border-white/10 animate-pulse">
-                                    </div>
-
-                                    <div
-                                        class="p-6 rounded-full backdrop-blur-lg border border-white/20 bg-gradient-to-br from-black/80 to-black/60 shadow-2xl transform group-hover:rotate-12 group-hover:scale-110 transition-all duration-500 hover:shadow-white/20">
-                                        <div class="transform group-hover:rotate-180 transition-transform duration-700">
-                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                                                class="w-8 h-8 fill-current text-[#ffd7ab] group-hover:text-gray-200 transition-colors duration-300 filter drop-shadow-lg">
-                                                <path
-                                                    d="M5.164 0L.16 18.928L18.836 24L23.84 5.072L5.164 0ZM14.023 15.208L8.792 13.469L10.436 8.152L15.667 9.891L14.023 15.208Z">
-                                                </path>
-                                            </svg>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="mb-4 transform group-hover:scale-105 transition-transform duration-300">
-                                    <p
-                                        class="text-3xl font-bold bg-gradient-to-r from-white via-[#ffd7ab] to-[#ffd7ab] bg-clip-text text-transparent animate-pulse">
-                                        Roblox
-                                    </p>
-                                </div>
-
-                                <div class="space-y-1 max-w-sm">
-                                    <!-- <p
-                                        class="text-gray-300 text-sm font-semibold leading-relaxed transform group-hover:text-gray-200 transition-colors duration-300">
-                                        Showcase your
-                                    </p> -->
-
-                                    <p
-                                        class="text-gray-300 text-xl leading-relaxed transform group-hover:text-gray-200 transition-colors duration-300">
-                                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illo, eveniet Lorem
-                                        ipsum dolor, sit amet consectetur adipisicing elit. Libero quidem omnis nulla
-                                        modi maxime saepe in eaque nostrum ex minus!
-                                    </p>
-
-                                </div>
-
-                                <div
-                                    class="mt-6 w-1/3 h-0.5 bg-gradient-to-r from-transparent via-white to-transparent rounded-full transform group-hover:w-1/2 group-hover:h-1 transition-all duration-500 animate-pulse">
-                                </div>
-
-                                <div
-                                    class="flex space-x-2 mt-4 opacity-60 group-hover:opacity-100 transition-opacity duration-300">
-                                    <div class="w-2 h-2 bg-[#ffd7ab] rounded-full animate-bounce"></div>
-                                    <div style="animation-delay: 0.1s;"
-                                        class="w-2 h-2 bg-[#ffd7ab] rounded-full animate-bounce"></div>
-                                    <div style="animation-delay: 0.2s;"
-                                        class="w-2 h-2 bg-[#ffd7ab] rounded-full animate-bounce"></div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div
-                            class="absolute top-0 left-0 w-20 h-20 bg-gradient-to-br from-white/10 to-transparent rounded-br-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                        </div>
-                        <div
-                            class="absolute bottom-0 right-0 w-20 h-20 bg-gradient-to-tl from-white/10 to-transparent rounded-tl-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                        </div>
-                    </div>
-                </div>
-                <div class="group cursor-pointer transform transition-all duration-500 hover:scale-105 hover:-rotate-1">
-                    <div
-                        class="text-white rounded-3xl border border-white/10 bg-gradient-to-br from-[#010101] via-[#090909] to-[#010101] shadow-2xl duration-700 z-10 relative backdrop-blur-xl hover:border-white/25 overflow-hidden hover:shadow-white/5 hover:shadow-3xl w-[350px]">
+                    <div class="text-white rounded-3xl border border-white/10 about-cards via-[#090909] to-[#010101] shadow-2xl duration-700 z-10 relative backdrop-blur-xl hover:border-white/25 overflow-hidden hover:shadow-white/5 hover:shadow-3xl w-[30rem]">
                         <div class="absolute inset-0 z-0 overflow-hidden">
                             <div
                                 class="absolute inset-0 bg-gradient-to-tr from-white/5 to-white/10 opacity-40 group-hover:opacity-60 transition-opacity duration-500">
@@ -696,20 +541,25 @@
                     <div class="col-lg-6 d-flex md:py-10 py-10 align-items-end justify-content-center wow fadeInRight"
                         data-wow-duration="1500ms ">
                         <div class="about-two__image md:w-[400px] h-[280px]  bg-[#ffd7ab] relative mt-60">
-                            <img src="/assets/images/PHOTO-2025-07-10-21-50-51_39.jpg"
-                                class="about-two__image--1 rounded-lg absolute -bottom-[30px] md:left-[100px] left-[-1px] top-5 z-0"
-                                alt="Awesome Image">
-                            <!-- <img src="./images/allimages/400SQFT-expo-us-6-min-768x513.webp"
-                            class="about-two__image--2 absolute -top-[30px] md:right-[100px] right-[16px] z-10"
-                            alt="Awesome Image"> -->
+                            <img src="/assets/images/PHOTO-2025-07-10-21-50-51_39.jpg" class="about-two__image--1 rounded-lg absolute -bottom-[30px] md:left-[100px] left-[-1px] top-5 z-0" alt="Awesome Image">
+                            <img src="/assets/images/PHOTO-2025-07-10-21-50-51_10.jpg" class="about-two__image--2 absolute top-[100px] md:right-[50px] right-[16px] z-10" alt="Awesome Image">
 
-                            <div
-                                class="about-two__image-content flex md:w-[370px] w-[280px] h-[248px] border-[2px] border-[solid] border-[#eaeaea] p-[30px] absolute bottom-[20px] left-[70px] -translate-y-1/2">
+                           <div class="about-two__image-content flex md:w-[370px] w-[280px] h-[248px] border-[2px] border-[solid] border-[#eaeaea] p-[30px] absolute bottom-[20px] left-[0px] -translate-y-1/2">
 
-                                <div
-                                    class="about-two__image-decor w-[148px] h-[48px] border-r-8 border-[#ffd7ab] bg-[-webkit-gradient(linear,_left_top,_left_bottom,_color-stop(19%,_#f2ebe8),_to(white))] bg-[linear-gradient(180deg,_#f2ebe8_19%,_white_100%)] mr-[15px]">
+                                <div class="about-two__image-decor w-[148px] h-[48px] border-r-8 border-[#ffd7ab] bg-[-webkit-gradient(linear,_left_top,_left_bottom,_color-stop(19%,_#f2ebe8),_to(white))] bg-[linear-gradient(180deg,_#f2ebe8_19%,_white_100%)] mr-[15px]">
                                 </div>
-
+                                <!-- /.about-two__image-decor -->
+                                <div class="about-two__image-content-main flex ">
+                                    <div class="about-two__image-content-left text-[60px] text-[#302e2f] leading-[1em] font-['Prata']">
+                                        E
+                                    </div>
+                                    <div class="about-two__image-content-right ml-[10px]">
+                                        <span class="block text-[18px] text-[#302e2f] leading-[1em] font-['prata']">stablished</span>
+                                        <div class="about-two__year text-[24px] mt-[15px]">
+                                            <span class="block text-[18px] text-[#302e2f] leading-[1em] font-['Prata']">1864</span>
+                                        </div>
+                                    </div>
+                                </div><!-- /.about-two__image-content-main -->
                             </div><!-- /.about-two__image-content -->
                         </div><!-- /.about-two__image -->
                     </div><!-- /.col-lg-6 -->
@@ -734,16 +584,11 @@
                             <!-- /.about-two__text -->
                             <a href="/contact_us.html"
                                 class="relative inline-flex items-center justify-start px-6 py-3 overflow-hidden font-medium transition-all bg-[#ffd7ab] rounded-xl group md:mt-10">
-                                <span
-                                    class="absolute top-0 right-0 inline-block w-4 h-4 transition-all duration-500 ease-in-out bg-[#22092C] rounded group-hover:-mr-4 group-hover:-mt-4">
-                                    <span
-                                        class="absolute top-0 right-0 w-5 h-5 rotate-45 translate-x-1/2 -translate-y-1/2 bg-white"></span>
+                                <span class="absolute top-0 right-0 inline-block w-4 h-4 transition-all duration-500 ease-in-out bg-[#22092C] rounded group-hover:-mr-4 group-hover:-mt-4">
+                                    <span class="absolute top-0 right-0 w-5 h-5 rotate-45 translate-x-1/2 -translate-y-1/2 bg-white"></span>
                                 </span>
-                                <span
-                                    class="absolute bottom-0 left-0 w-full h-full transition-all duration-500 ease-in-out delay-200 -translate-x-full translate-y-full bg-white rounded-2xl group-hover:mb-12 group-hover:translate-x-0"></span>
-                                <span
-                                    class="relative w-full text-left text-black  transition-colors duration-200 ease-in-out group-hover:text-[#000] md:text-2xl text-xl font-bold">Rent
-                                    Now</span>
+                                <span class="absolute bottom-0 left-0 w-full h-full transition-all duration-500 ease-in-out delay-200 -translate-x-full translate-y-full bg-white rounded-2xl group-hover:mb-12 group-hover:translate-x-0"></span>
+                                <span class="relative w-full text-left text-black  transition-colors duration-200 ease-in-out group-hover:text-[#926440] md:text-2xl text-xl font-bold">Rent Now</span>
                             </a>
                         </div><!-- /.about-two__content -->
                     </div><!-- /.col-lg-6 -->
@@ -794,11 +639,10 @@
                             <a href="#">
                                 <img class="w-3/2 rounded-3xl" src="/assets/images/PHOTO-2025-07-10-21-50-51_5.jpg">
                             </a>
-                            <div class="relative -mt-24 px-10 py-10 pb-16 bg-white m-10 md:h-80 rounded-2xl">
+                            <div class="relative -mt-24 px-10 py-10 pb-16 cutsom-booths-exhibit-card m-10 md:h-80 rounded-2xl">
                                 <h4> <a href="#"
-                                        class="font-semibold md:text-3xl flex justify-center hover:text-[#80837a] transition duration-500 ease-in-out inline-block mb-2">CUSTOM
-                                        BOOTHS EXHIBIT</a></h4>
-                                <p class="text-gray-500 md:text-2xl pt-5">
+                                        class="font-semibold md:text-3xl flex justify-center hover:text-[#80837a] transition duration-500 ease-in-out inline-block mb-2">CUSTOM BOOTHS EXHIBIT</a></h4>
+                                <p class="pt-5">
                                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam temporibus corrupti
                                     aliquam error delectus iusto ab, ex earum dicta eum!
                                 </p>
@@ -814,11 +658,11 @@
                             <a href="#">
                                 <img class="w-3/2 rounded-2xl" src="/assets/images/PHOTO-2025-07-10-21-50-51_38.jpg">
                             </a>
-                            <div class="relative -mt-24 px-10  py-10 pb-16 bg-white m-10 md:h-80 rounded-2xl">
+                            <div class="relative -mt-24 px-10  py-10 pb-16 cutsom-booths-exhibit-card m-10 md:h-80 rounded-2xl">
                                 <h4> <a href="#"
                                         class="font-semibold md:text-3xl flex justify-center hover:text-[#80837a] transition duration-500 ease-in-out inline-block mb-2">MODULAR
                                         BOOTHS EXHIBIT</a></h4>
-                                <p class="text-gray-500 md:text-2xl pt-5">
+                                <p class="pt-5">
                                     Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eveniet magni eum ex
                                     laudantium rerum porro tempora, tempore quibusdam distinctio modi?
                                 </p>
@@ -863,8 +707,7 @@
                                     </div>
 
                                 </div>
-                                <div
-                                    class="title relative top-[8rem] left-[2rem] rounded-2xl bg-[#ffd7ab]  w-[71%] flex justify-center items-center">
+                                <div class="title relative top-[8rem] rounded-2xl bg-[#ffd7ab]  w-[100%] mx-auto flex justify-center items-center">
 
                                     <span class=" text-2xl">Germany</span>
                                 </div>
@@ -875,8 +718,7 @@
 
 
                         </div>
-                        <div
-                            class="box bg-[url(/assets/images/header_back/svgviewer-png-output.png)] bg-cover md:w-[19%] h-[11rem] rounded-[2rem] border-[4px] border-[solid] border-[peachpuff]  shadow-xl  transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl  sm:max-w-[20rem] ">
+                        <div class="box bg-[url(/assets/images/header_back/svgviewer-png-output.png)] bg-cover md:w-[19%] h-[11rem] rounded-[2rem] border-[4px] border-[solid] border-[peachpuff]  shadow-xl  transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl  sm:max-w-[20rem] ">
                             <div class="box-inner  ">
 
                                 <div class="relative">
@@ -886,8 +728,7 @@
                                     </div>
 
                                 </div>
-                                <div
-                                    class="title relative top-[8rem] left-[2rem] rounded-2xl bg-[#ffd7ab]  w-[71%] flex justify-center items-center">
+                                <div class="title relative top-[8rem] rounded-2xl bg-[#ffd7ab]  w-[100%] mx-auto flex justify-center items-center">
 
                                     <span class=" text-2xl">Netherlands</span>
                                 </div>
@@ -910,7 +751,7 @@
 
                                 </div>
                                 <div
-                                    class="title relative top-[8rem] left-[2rem] rounded-2xl bg-[#ffd7ab]  w-[71%] flex justify-center items-center">
+                                    class="title relative top-[8rem] rounded-2xl bg-[#ffd7ab]  w-[100%] mx-auto flex justify-center items-center">
 
                                     <span class=" text-2xl">Italy</span>
                                 </div>
@@ -933,7 +774,7 @@
 
                                 </div>
                                 <div
-                                    class="title relative top-[8rem] left-[2rem] rounded-2xl bg-[#ffd7ab]  w-[71%] flex justify-center items-center">
+                                    class="title relative top-[8rem] rounded-2xl bg-[#ffd7ab]  w-[100%] mx-auto flex justify-center items-center">
 
                                     <span class=" text-2xl">France</span>
                                 </div>
@@ -956,7 +797,7 @@
 
                                 </div>
                                 <div
-                                    class="title relative top-[8rem] left-[2rem] rounded-2xl bg-[#ffd7ab]  w-[71%] flex justify-center items-center">
+                                    class="title relative top-[8rem] rounded-2xl bg-[#ffd7ab]  w-[100%] mx-auto flex justify-center items-center">
 
                                     <span class=" text-2xl">Switzerland</span>
                                 </div>
@@ -979,7 +820,7 @@
 
                                 </div>
                                 <div
-                                    class="title relative top-[8rem] left-[2rem] rounded-2xl bg-[#ffd7ab]  w-[71%] flex justify-center items-center">
+                                    class="title relative top-[8rem] rounded-2xl bg-[#ffd7ab]  w-[100%] mx-auto flex justify-center items-center">
 
                                     <span class=" text-2xl">UK</span>
                                 </div>
@@ -1002,7 +843,7 @@
 
                                 </div>
                                 <div
-                                    class="title relative top-[8rem] left-[2rem] rounded-2xl bg-[#ffd7ab]  w-[71%] flex justify-center items-center">
+                                    class="title relative top-[8rem] rounded-2xl bg-[#ffd7ab]  w-[100%] mx-auto flex justify-center items-center">
 
                                     <span class=" text-2xl">UAE</span>
                                 </div>
@@ -1013,31 +854,8 @@
 
 
                         </div>
-                        <div
-                            class="box bg-[url(/assets/images/header_back/svgviewer-png-output.png)] bg-cover md:w-[19%] h-[11rem] rounded-[2rem] border-[4px] border-[solid] border-[peachpuff]  shadow-xl  transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl  sm:max-w-[20rem] ">
-                            <div class="box-inner  ">
-
-                                <div class="relative">
-                                    <div class="absolute top-[-55px] left-[45px]">
-                                        <img src="/assets/images/flags/china.jpg" alt="city_image"
-                                            class="inline-block p-[10px] rounded-[50%]  h-[102px] w-[102px]">
-                                    </div>
-
-                                </div>
-                                <div
-                                    class="title relative top-[8rem] left-[2rem] rounded-2xl bg-[#ffd7ab]  w-[71%] flex justify-center items-center">
-
-                                    <span class=" text-2xl">China</span>
-                                </div>
-
-
-                            </div>
-
-
-
-                        </div>
-                        <div
-                            class="box bg-[url(/assets/images/header_back/svgviewer-png-output.png)] bg-cover md:w-[19%] h-[11rem] rounded-[2rem] border-[4px] border-[solid] border-[peachpuff]  shadow-xl  transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl  sm:max-w-[20rem] ">
+                         
+                        <div class="box bg-[url(/assets/images/header_back/svgviewer-png-output.png)] bg-cover md:w-[19%] h-[11rem] rounded-[2rem] border-[4px] border-[solid] border-[peachpuff]  shadow-xl  transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl  sm:max-w-[20rem] ">
                             <div class="box-inner  ">
 
                                 <div class="relative">
@@ -1047,8 +865,7 @@
                                     </div>
 
                                 </div>
-                                <div
-                                    class="title relative top-[8rem] left-[2rem] rounded-2xl bg-[#ffd7ab]  w-[71%] flex justify-center items-center">
+                                <div class="title relative top-[8rem] rounded-2xl bg-[#ffd7ab]  w-[100%] mx-auto flex justify-center items-center">
 
                                     <span class=" text-2xl">India</span>
                                 </div>
@@ -1071,7 +888,7 @@
 
                                 </div>
                                 <div
-                                    class="title relative top-[8rem] left-[2rem] rounded-2xl bg-[#ffd7ab]  w-[71%] flex justify-center items-center">
+                                    class="title relative top-[8rem] rounded-2xl bg-[#ffd7ab]  w-[100%] mx-auto flex justify-center items-center">
 
                                     <span class=" text-2xl">Spain</span>
                                 </div>
@@ -1094,7 +911,7 @@
 
                                 </div>
                                 <div
-                                    class="title relative top-[8rem] left-[2rem] rounded-2xl bg-[#ffd7ab]  w-[71%] flex justify-center items-center">
+                                    class="title relative top-[8rem] rounded-2xl bg-[#ffd7ab]  w-[100%] mx-auto flex justify-center items-center">
 
                                     <span class=" text-2xl">Thailand</span>
                                 </div>
@@ -1110,19 +927,12 @@
                 </div>
         </section>
 
-        <section class="tabs_back bg-[#c0c0c045]">
+        <section class="tabs_back">
             <div class="px-[3%]">
                 <div class="md:grid grid-cols-6 gap-4">
-
                     <div class="col-start-2 col-span-4 ...">
-
-                        <h2 class="text-center md:text-5xl text-3xl text-[#22092C]  pt-20 pb-10">Checkout out some of
-                            our successful trade show
-                            booth rentals</h2>
-
-
+                        <h2 class="text-center md:text-5xl text-3xl text-[#22092C]  pt-20 pb-10">Checkout out some of our successful trade show booth rentals</h2>
                     </div>
-
                 </div>
                 <div class="grid grid-cols-1 gap-4">
 
@@ -1150,14 +960,11 @@
 
                 <div class="tab-wrapper">
                     <div class="flex gap-[10px] mb-[20px] max-w-[600px] w-full px-[3%]">
-                        <button
-                            class="tab flex-[1] p-[12px] bg-[#000] text-[#eee] border-[none] rounded-[6px] cursor-pointer relative [transition:all_0.3s_ease] tab active bg-[#ffd7ab] border-b-[#ffd7ab] text-black"
+                        <button class="tab flex-[1] p-[12px] trade-show-toggle-buttons text-[#eee] border-[none] rounded-[6px] cursor-pointer relative [transition:all_0.3s_ease] tab-active  border-b-[#ffd7ab]"
                             data-tab="home">Custom </button>
-                        <button
-                            class="tab flex-[1] p-[12px] bg-[#000] text-[#eee] border-[none] rounded-[6px] cursor-pointer relative [transition:all_0.3s_ease]"
+                        <button class="tab flex-[1] p-[12px] trade-show-toggle-buttons text-[#eee] border-[none] rounded-[6px] cursor-pointer relative [transition:all_0.3s_ease]"
                             data-tab="profile">Pavillion</button>
-                        <button
-                            class="tab flex-[1] p-[12px] bg-[#000] text-[#eee] border-[none] rounded-[6px] cursor-pointer relative [transition:all_0.3s_ease]"
+                        <button class="tab flex-[1] p-[12px] trade-show-toggle-buttons text-[#eee] border-[none] rounded-[6px] cursor-pointer relative [transition:all_0.3s_ease]"
                             data-tab="settings">Modular</button>
                     </div>
 
@@ -1287,29 +1094,24 @@
         </section>
 
         <section
-            class="bg-[radial-gradient(circle_at_13%_47%,_rgba(140,_140,_140,0.03)_0%,_rgba(140,_140,_140,0.03)_25%,transparent_25%,_transparent_100%),radial-gradient(circle_at_28%_63%,_rgba(143,_143,_143,0.03)_0%,_rgba(143,_143,_143,0.03)_16%,transparent_16%,_transparent_100%),radial-gradient(circle_at_81%_56%,_rgba(65,_65,_65,0.03)_0%,_rgba(65,_65,_65,0.03)_12%,transparent_12%,_transparent_100%),radial-gradient(circle_at_26%_48%,_rgba(60,_60,_60,0.03)_0%,_rgba(60,_60,_60,0.03)_6%,transparent_6%,_transparent_100%),radial-gradient(circle_at_97%_17%,_rgba(150,_150,_150,0.03)_0%,_rgba(150,_150,_150,0.03)_56%,transparent_56%,_transparent_100%),radial-gradient(circle_at_50%_100%,_rgba(25,_25,_25,0.03)_0%,_rgba(25,_25,_25,0.03)_36%,transparent_36%,_transparent_100%),radial-gradient(circle_at_55%_52%,_rgba(69,_69,_69,0.03)_0%,_rgba(69,_69,_69,0.03)_6%,transparent_6%,_transparent_100%),linear-gradient(90deg,_rgb(255,255,255),rgb(255,255,255))] bg-fixed">
-            <div
-                class="px-[7%] bg-[linear-gradient(117.54deg,rgba(0,0,0,0.5)-19.85%,rgba(0,0,0,0.37)4.2%,rgba(0,0,0,0.29)13.88%,rgba(0,0,0,0.21)27.98%,rgba(0,0,0,0.18)37.8%,rgba(0,0,0,0.14)44.38%,rgba(0,0,0,0.13)50.54%,rgba(0,0,0,0.1)60.21%)]">
+            class="">
+            <div class="px-[7%]">
                 <div class="grid grid-cols-1 gap-4">
-                    <h3 class="md:text-5xl text-4xl text-center md:pt-20 text-[#22092C] md:py-20 py-20">Why Choose Us As
-                        Exhibition
-                        Booth Contractor and Stand Builder in Europe</h3>
+                    <h3 class="md:text-5xl text-4xl text-center md:pt-20 text-[#22092C] md:py-20 py-20">
+                        Why Choose Us As Exhibition Booth Contractor and Stand Builder in Europe
+                    </h3>
 
                 </div>
-                <div
-                    class="md:grid md:grid-cols-3 md:gap-10 grid gap-y-10 relative z-1  md:pt-20 md:pb-40 pb-20 md:px-10">
+                <div class="md:grid md:grid-cols-3 md:gap-10 grid gap-y-10 relative z-1 md:pt-20 md:pb-40 pb-20 md:px-10">
 
-                    <div
-                        class="exs_sec1_new-design-sec-14_item py-0 px-6 pb-6 border border-teal-300 rounded-[85px_20px_20px] bg-[#0000004f]">
-                        <div
-                            class="exs_sec1_new-design-sec-14-block flex items-center gap-6 mb-6 relative left-[-20px] ">
-                            <div
-                                class="exs_sec1_new-design-sec-14-img md:w-[84px] w-[70px] h-[70px] md:h-[84px] p-2 bg-[#ffd7ab] bg-gradient-to-r from-[rgba(0,0,0,0.5)]_-19.85% to-[rgba(0,0,0,0.37)]_4.2% via-[rgba(0,0,0,0.29)]_13.88% via-[rgba(0,0,0,0.21)]_27.98% via-[rgba(0,0,0,0.18)]_37.8% via-[rgba(0,0,0,0.14)]_44.38% via-[rgba(0,0,0,0.13)]_50.54% to-[rgba(0,0,0,0.1)]_60.21% rounded-full border border-[#00ffd5] flex justify-center items-center">
+                    <div class="exs_sec1_new-design-sec-14_item py-0 px-6 pb-6 border border-teal-300 rounded-[85px_20px_20px] clarity-card ">
+                        <div class="exs_sec1_new-design-sec-14-block flex items-center gap-6 mb-6 relative left-[-20px] ">
+                            <div class="exs_sec1_new-design-sec-14-img md:w-[84px] w-[70px] h-[70px] md:h-[84px] p-2 icon-pop rounded-full border flex justify-center items-center">
                                 <img src="https://www.expodisplaystudio.com/assets/html/images/trusted-exhibit-icon-1.png"
                                     alt="Exhibition Stand Builder" class="md:w-[46px] w-[30px] h-[30px] md:h-[44px]">
                             </div>
                             <div class="exs_sec1_new-design-sec-14-head">
-                                <h5 class="text-3xl text-white">Clarity <br>in Costs</h5>
+                                <h5 class="text-4xl text-white">Clarity in Costs</h5>
                             </div>
                         </div>
                         <div class="exs_sec1_new-design-sec-14-content">
@@ -1321,17 +1123,14 @@
                                 improving your exhibition experience.</p>
                         </div>
                     </div>
-                    <div
-                        class="exs_sec1_new-design-sec-14_item py-0 px-6 pb-6 border border-teal-300 rounded-[85px_20px_20px] bg-[#0000004f]">
-                        <div
-                            class="exs_sec1_new-design-sec-14-block flex items-center gap-6 mb-6 relative left-[-20px] ">
-                            <div
-                                class="exs_sec1_new-design-sec-14-img md:w-[84px] w-[70px] h-[70px] md:h-[84px] p-2 bg-[#ffd7ab] bg-gradient-to-r from-[rgba(0,0,0,0.5)]_-19.85% to-[rgba(0,0,0,0.37)]_4.2% via-[rgba(0,0,0,0.29)]_13.88% via-[rgba(0,0,0,0.21)]_27.98% via-[rgba(0,0,0,0.18)]_37.8% via-[rgba(0,0,0,0.14)]_44.38% via-[rgba(0,0,0,0.13)]_50.54% to-[rgba(0,0,0,0.1)]_60.21% rounded-full border border-[#00ffd5] flex justify-center items-center">
+                    <div class="exs_sec1_new-design-sec-s14_item py-0 px-6 pb-6 border border-teal-300 rounded-[85px_20px_20px] clarity-card">
+                        <div class="exs_sec1_new-design-sec-14-block flex items-center gap-6 mb-6 relative left-[-20px] ">
+                            <div class="exs_sec1_new-design-sec-14-img md:w-[84px] w-[70px] h-[70px] md:h-[84px] p-2 icon-pop rounded-full border flex justify-center items-center">
                                 <img src="https://www.expodisplaystudio.com/assets/html/images/trusted-exhibit-icon-1.png"
                                     alt="Exhibition Stand Builder" class="md:w-[46px] w-[30px] h-[30px] md:h-[44px]">
                             </div>
                             <div class="exs_sec1_new-design-sec-14-head">
-                                <h5 class="text-3xl text-white">Clarity <br>in Costs</h5>
+                                <h5 class="text-4xl text-white">Clarity in Costs</h5>
                             </div>
                         </div>
                         <div class="exs_sec1_new-design-sec-14-content">
@@ -1343,17 +1142,16 @@
                                 improving your exhibition experience.</p>
                         </div>
                     </div>
-                    <div
-                        class="exs_sec1_new-design-sec-14_item py-0 px-6 pb-6 border border-teal-300 rounded-[85px_20px_20px] bg-[#0000004f]">
+                    <div class="exs_sec1_new-design-sec-14_item py-0 px-6 pb-6 border border-teal-300 rounded-[85px_20px_20px] clarity-card">
                         <div
                             class="exs_sec1_new-design-sec-14-block flex items-center gap-6 mb-6 relative left-[-20px] ">
                             <div
-                                class="exs_sec1_new-design-sec-14-img md:w-[84px] w-[70px] h-[70px] md:h-[84px] p-2 bg-[#ffd7ab] bg-gradient-to-r from-[rgba(0,0,0,0.5)]_-19.85% to-[rgba(0,0,0,0.37)]_4.2% via-[rgba(0,0,0,0.29)]_13.88% via-[rgba(0,0,0,0.21)]_27.98% via-[rgba(0,0,0,0.18)]_37.8% via-[rgba(0,0,0,0.14)]_44.38% via-[rgba(0,0,0,0.13)]_50.54% to-[rgba(0,0,0,0.1)]_60.21% rounded-full border border-[#00ffd5] flex justify-center items-center">
+                                class="exs_sec1_new-design-sec-14-img md:w-[84px] w-[70px] h-[70px] md:h-[84px] p-2 icon-pop rounded-full border flex justify-center items-center">
                                 <img src="https://www.expodisplaystudio.com/assets/html/images/trusted-exhibit-icon-1.png"
                                     alt="Exhibition Stand Builder" class="md:w-[46px] w-[30px] h-[30px] md:h-[44px]">
                             </div>
                             <div class="exs_sec1_new-design-sec-14-head">
-                                <h5 class="text-3xl text-white">Clarity <br>in Costs</h5>
+                                <h5 class="text-4xl text-white">Clarity in Costs</h5>
                             </div>
                         </div>
                         <div class="exs_sec1_new-design-sec-14-content">
@@ -1365,17 +1163,16 @@
                                 improving your exhibition experience.</p>
                         </div>
                     </div>
-                    <div
-                        class="exs_sec1_new-design-sec-14_item py-0 px-6 pb-6 border border-teal-300 rounded-[85px_20px_20px] bg-[#0000004f]">
+                    <div class="exs_sec1_new-design-sec-14_item py-0 px-6 pb-6 border border-teal-300 rounded-[85px_20px_20px] clarity-card">
                         <div
                             class="exs_sec1_new-design-sec-14-block flex items-center gap-6 mb-6 relative left-[-20px] ">
                             <div
-                                class="exs_sec1_new-design-sec-14-img md:w-[84px] w-[70px] h-[70px] md:h-[84px] p-2 bg-[#ffd7ab] bg-gradient-to-r from-[rgba(0,0,0,0.5)]_-19.85% to-[rgba(0,0,0,0.37)]_4.2% via-[rgba(0,0,0,0.29)]_13.88% via-[rgba(0,0,0,0.21)]_27.98% via-[rgba(0,0,0,0.18)]_37.8% via-[rgba(0,0,0,0.14)]_44.38% via-[rgba(0,0,0,0.13)]_50.54% to-[rgba(0,0,0,0.1)]_60.21% rounded-full border border-[#00ffd5] flex justify-center items-center">
+                                class="exs_sec1_new-design-sec-14-img md:w-[84px] w-[70px] h-[70px] md:h-[84px] p-2 icon-pop rounded-full border flex justify-center items-center">
                                 <img src="https://www.expodisplaystudio.com/assets/html/images/trusted-exhibit-icon-1.png"
                                     alt="Exhibition Stand Builder" class="md:w-[46px] w-[30px] h-[30px] md:h-[44px]">
                             </div>
                             <div class="exs_sec1_new-design-sec-14-head">
-                                <h5 class="text-3xl text-white">Clarity <br>in Costs</h5>
+                                <h5 class="text-4xl text-white">Clarity in Costs</h5>
                             </div>
                         </div>
                         <div class="exs_sec1_new-design-sec-14-content">
@@ -1387,17 +1184,16 @@
                                 improving your exhibition experience.</p>
                         </div>
                     </div>
-                    <div
-                        class="exs_sec1_new-design-sec-14_item py-0 px-6 pb-6 border border-teal-300 rounded-[85px_20px_20px] bg-[#0000004f]">
+                    <div class="exs_sec1_new-design-sec-14_item py-0 px-6 pb-6 border border-teal-300 rounded-[85px_20px_20px] clarity-card">
                         <div
                             class="exs_sec1_new-design-sec-14-block flex items-center gap-6 mb-6 relative left-[-20px] ">
                             <div
-                                class="exs_sec1_new-design-sec-14-img md:w-[84px] w-[70px] h-[70px] md:h-[84px] p-2 bg-[#ffd7ab] bg-gradient-to-r from-[rgba(0,0,0,0.5)]_-19.85% to-[rgba(0,0,0,0.37)]_4.2% via-[rgba(0,0,0,0.29)]_13.88% via-[rgba(0,0,0,0.21)]_27.98% via-[rgba(0,0,0,0.18)]_37.8% via-[rgba(0,0,0,0.14)]_44.38% via-[rgba(0,0,0,0.13)]_50.54% to-[rgba(0,0,0,0.1)]_60.21% rounded-full border border-[#00ffd5] flex justify-center items-center">
+                                class="exs_sec1_new-design-sec-14-img md:w-[84px] w-[70px] h-[70px] md:h-[84px] p-2 icon-pop rounded-full border flex justify-center items-center">
                                 <img src="https://www.expodisplaystudio.com/assets/html/images/trusted-exhibit-icon-1.png"
                                     alt="Exhibition Stand Builder" class="md:w-[46px] w-[30px] h-[30px] md:h-[44px]">
                             </div>
                             <div class="exs_sec1_new-design-sec-14-head">
-                                <h5 class="text-3xl text-white">Clarity <br>in Costs</h5>
+                                <h5 class="text-4xl text-white">Clarity in Costs</h5>
                             </div>
                         </div>
                         <div class="exs_sec1_new-design-sec-14-content">
@@ -1409,17 +1205,16 @@
                                 improving your exhibition experience.</p>
                         </div>
                     </div>
-                    <div
-                        class="exs_sec1_new-design-sec-14_item py-0 px-6 pb-6 border border-teal-300 rounded-[85px_20px_20px] bg-[#0000004f]">
+                    <div class="exs_sec1_new-design-sec-14_item py-0 px-6 pb-6 border border-teal-300 rounded-[85px_20px_20px] clarity-card">
                         <div
                             class="exs_sec1_new-design-sec-14-block flex items-center gap-6 mb-6 relative left-[-20px] ">
                             <div
-                                class="exs_sec1_new-design-sec-14-img md:w-[84px] w-[70px] h-[70px] md:h-[84px] p-2 bg-[#ffd7ab] bg-gradient-to-r from-[rgba(0,0,0,0.5)]_-19.85% to-[rgba(0,0,0,0.37)]_4.2% via-[rgba(0,0,0,0.29)]_13.88% via-[rgba(0,0,0,0.21)]_27.98% via-[rgba(0,0,0,0.18)]_37.8% via-[rgba(0,0,0,0.14)]_44.38% via-[rgba(0,0,0,0.13)]_50.54% to-[rgba(0,0,0,0.1)]_60.21% rounded-full border border-[#00ffd5] flex justify-center items-center">
+                                class="exs_sec1_new-design-sec-14-img md:w-[84px] w-[70px] h-[70px] md:h-[84px] p-2 icon-pop rounded-full border flex justify-center items-center">
                                 <img src="https://www.expodisplaystudio.com/assets/html/images/trusted-exhibit-icon-1.png"
                                     alt="Exhibition Stand Builder" class="md:w-[46px] w-[30px] h-[30px] md:h-[44px]">
                             </div>
                             <div class="exs_sec1_new-design-sec-14-head">
-                                <h5 class="text-3xl text-white">Clarity <br>in Costs</h5>
+                                <h5 class="text-4xl text-white">Clarity in Costs</h5>
                             </div>
                         </div>
                         <div class="exs_sec1_new-design-sec-14-content">
@@ -1437,7 +1232,7 @@
             </div>
         </section>
 
-        <section class="py-20 bg-[#000000a8]">
+        <section class="py-20 testimonial-container">
             <div class="px-[3%]">
 
                 <div class="md:grid grid-cols-6 gap-4">
@@ -1489,32 +1284,15 @@
 
             </div>
         </section>
+
         <section class="section contact_form py-20">
 
             <div class="md:px-[5%]">
-
-
-
-
-
                 <div>
                     <div class="md:flex grid gap-10 gap-x-40 pt-20 ">
 
                         <div class="contact-info md:mt-36 md:px-1 px-5">
-                            <!-- <div class="contact-info-item flex gap-x-4 mb-8">
-                                <div
-                                    class="contact-info-icon bg-white h-[70px] w-[70px] rounded-full flex justify-center items-center mb-5">
-                                    <i class="fas fa-home"></i>
-                                </div>
-
-                                <div class="contact-info-content">
-                                    <h4 class="md:text-4xl text-3xl font-bold mb-5">Address</h4>
-                                    <p class="text-xl font-medium"><b>Building No./Flat No.:</b> RC-443,<br>Gautambuddha
-                                        Nagar, <br>UP , 201309 <br>
-                                    </p>
-                                </div>
-                            </div> -->
-
+                            
                             <div>
                                 <h2 class="md:text-5xl text-3xl text-black font-bold mb-5">
                                     CONTACT US FOR FREE
@@ -1524,32 +1302,30 @@
 
 
                             <div class="contact-info-item flex gap-x-4 mb-8">
-                                <div
-                                    class="contact-info-icon bg-white h-[70px] w-[70px] rounded-full flex justify-center items-center mb-5">
+                                <div class="contact-info-icon h-[70px] w-[70px] rounded-full flex justify-center items-center mb-5">
                                     <i class="fas fa-phone"></i>
                                 </div>
 
                                 <div class="contact-info-content">
-                                    <h4 class="md:text-4xl text-3xlfont-bold mb-3">Phone</h4>
+                                    <h4 class="md:text-4xl text-3xl text-white font-bold mb-3">Phone</h4>
                                     <div class="flex gap-2">
-                                        <p class="text-xl font-medium"><a href="tel:+17026050607">+919718599885 ,</a>
+                                        <p class="text-xl font-medium text-white"><a href="tel:+17026050607">+919718599885 ,</a>
                                         </p>
-                                        <p class="text-xl font-medium"><a href="tel:+918920019588">+918920019588</a></p>
+                                        <p class="text-xl font-medium text-white"><a href="tel:+918920019588">+918920019588</a></p>
 
                                     </div>
                                 </div>
                             </div>
 
                             <div class="contact-info-item flex gap-x-4 mb-8">
-                                <div
-                                    class="contact-info-icon bg-white h-[70px] w-[70px] rounded-full flex justify-center items-center">
+                                <div class="contact-info-icon h-[70px] w-[70px] rounded-full flex justify-center items-center">
                                     <i class="fas fa-envelope"></i>
                                 </div>
 
                                 <div class="contact-info-content">
-                                    <h4 class="md:text-4xl text-3xl font-bold mb-3">Email</h4>
+                                    <h4 class="md:text-4xl text-3xl text-white font-bold mb-3">Email</h4>
                                     <p>
-                                        <a href="mailto: Marketing.verlux@gmail.com text-xl">
+                                        <a href="mailto: Marketing.verlux@gmail.com text-xl" class="text-white">
                                             Marketing.verlux@gmail.com</a>
                                     </p>
                                 </div>
@@ -1654,16 +1430,12 @@
                                                 accept=".jpg,.jpeg,.png,.pdf,.doc,.docx"
                                                 title="Allowed: JPG, PNG, PDF, DOC" class="text-2xl">
                                         </div>
-                                        <!-- <button id="verify-btn" class="required">Verify</button>
-                                        <p id="result-message"></p> -->
                                     </div>
 
-
-
-
-                                    <button type="submit"
-                                        class="w-[13em] py-5 px-5 block m-auto bg-[#ffd7ab] text-[#fff]"><i
-                                            class="fas fa-paper-plane"></i> Submit</button>
+                                    <button type="submit" class="w-[13em] py-5 px-5 block m-auto bg-[#ffd7ab] text-[#fff]">
+                                        <i class="fas fa-paper-plane"></i> 
+                                        <span>Submit</span>
+                                    </button>
                                 </form>
 
                             </div>
@@ -1676,7 +1448,7 @@
 
         <section>
 
-            <div class="px-[5%] bg-">
+            <div class="px-[5%]">
                 <div class="grid grid-cols-1 gap-4">
 
                     <div class="col-start-1 col-span-4 ...">
@@ -1692,8 +1464,8 @@
                 </div>
 
 
-                <div class="flex ">
-                    <div class="slider w-full bg-zinc-100 overflow-hidden">
+                <div class="flex">
+                    <div class="slider w-full overflow-hidden">
                         <div class="slider-track slider-animation  p-16 flex ">
                             <div class="slide">
                                 <img src="/assets/images/logos/1.webp"
@@ -1748,8 +1520,8 @@
 
     </main>
  
-    <footer class="pt-16 pb-7 bg-[#ffd7ab] relative">
-        <div class="px-[8%] bg-white ">
+    <footer class="relative">
+        <div class="pt-16 px-[8%] footer-container">
 
             <div class="mx-auto max-w-full px-4 sm:px-6 lg:px-8 py-10">
                 <div class="flex flex-col sm:flex-row  justify-between pb-3 border-b border-gray-500 gap-8">
@@ -1957,217 +1729,184 @@
                     </div>
 
                 </div>
-                <div class="flex flex-col-reverse sm:flex-row items-center justify-center gap-5 pt-7">
-                    <span class="pt-5 text-gray-400 py-5">Terms & Conditions
+                <div class="flex text-[12px] flex-col-reverse sm:flex-row items-center justify-center gap-5 pt-7">
+                    <span class="pt-5 text-gray-700 py-5">Terms & Conditions
                         Privacy Policy
                         Disclaimer
                         Contact</span>
-                    <span class="text-lg font-normal text-gray-400">
+                    <span class="font-normal text-gray-500">
                         <a href="https://pagedone.io/">©2025 VERLUX STANDS PRIVATE LIMITED</a>
                     </span>
-                    <div class="relative  text-gray-500 focus-within:text-gray-900 ">
-                        <div class="absolute inset-y-0 right-6 flex items-center pl-3 pointer-events-none ">
-
-
-
-
-                        </div>
-
-                    </div>
                 </div>
             </div>
         </div>
     </footer>
 
+    <!-- Floating WhatsApp Chat Button -->
+    <div class="fixed bottom-4 left-4 z-50">
+        <!-- Chat Toggle Button -->
+        <a role="button" onclick="toggleChatBox()" id="contacti_button" class="flex whats-app-btn items-center gap-2 bg-green-600 hover:bg-green-800 text-white p-4 rounded-full shadow-lg  transition">
+        <img src="./assets/icons/whatsapp.png" width="30px" alt="">
+        </a>
+        <!-- Chat Popup Box -->
+        <div id="chatBox" class="contact-hide">
+        
+
+            <!-- Chat Toggle Button -->
+                <a role="button" onclick="toggleChatBox()" class="flex items-center gap-2 my-2 whats-app-btn bg-green-600 text-white p-4 rounded-full shadow-lg hover:bg-green-700 transition">
+                    <img src="./assets/icons/mail-48.png" width="30px" alt=""> <span class="text-[14px]">marketing.verlux@gmail.com</span>
+                </a>
+
+                <a href="tel:+918920019588" onclick="toggleChatBox()" class="flex items-center whats-app-btn gap-2 my-2 bg-green-600 text-white p-4 rounded-full shadow-lg hover:bg-green-700 transition">
+                    <img src="./assets/icons/phone.png" width="30px" alt=""> <span class="text-[14px]">+918920019588</span>
+                </a>
+
+            <div class="mt-3 bg-white border border-gray-200 rounded-xl shadow-lg overflow-hidden">
+                <!-- Header -->
+                <div class="bg-green-600 text-white flex items-center justify-between px-4 py-3">
+                <div class="flex items-center gap-2">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" class="w-[2.5rem] h-[2.5rem]">
+                    <span class="font-semibold">WhatsApp</span>
+                </div>
+                <a role="button" onclick="toggleChatBox()" title="Close" class="text-white hover:text-gray-200 w-8">✕</a>
+                </div>
+
+                <!-- Message Content -->
+                <div class="p-4 space-y-4">
+                <p class="text-xl text-gray-700">👋 Hello! Can we help you?</p>
+
+                <!-- QR Code -->
+                <div class="flex justify-center">
+                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://wa.me/48666202049" alt="WhatsApp QR" class="w-[13rem] h-[13rem] border rounded">
+                </div>
+                <!-- Quick Action Button -->
+                
+                <a href="./assets/icons/whatsapp-qr-code.png"
+                    target="_blank"
+                    class="block w-full flex gap-8 text-center bg-green-500 hover:bg-green-600 text-white font-semibold p-4 rounded-full transition">
+                    <!-- Paper Plane Icon (SVG) -->
+                    <svg class="animate-fly w-10 h-10 text-white transform group-hover:translate-x-1 group-hover:-translate-y-1 transition duration-300 ease-out" 
+                        fill="currentColor" 
+                        viewBox="0 0 24 24">
+                        <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/>
+                    </svg>
+                    <span>Start Chat</span>
+                </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Modal Overlay -->
+    <div onclick="toggleModal(false)" id="downloadModal" class="fixed inset-0 z-50 items-center flex justify-center bg-black bg-opacity-50 download-modal">
+        <div class="h-[52rem] rounded-lg w-full max-w-6xl p-6 relative">
+            <!-- Close Button -->
+            
+            <!-- Modal Title -->
+            
+            <!-- Form -->
+            <form id="brochureForm" class="h-full brochure-form relative">
+                <a role="button" onclick="toggleModal(false)" class="w-4 m-4 absolute top-2 right-[1.5rem] text-gray-100 hover:text-gray-300 text-5xl">&times;</a>
+                <h2 class="text-4xl text-gray-100 font-semibold text-center">Download Our Brochure</h2>
+
+                <!-- Name -->
+                <div class="mb-4">
+                    <label class="font-medium">Name <span class="text-red-500">*</span></label>
+                    <input type="text" name="name" placeholder="Enter your full name" required class="w-full bg-transparent rounded-xl border rounded px-3 py-2 ">
+            </div=>
+            <!-- Phone -->
+            <div class="my-3 py-2">
+                <label class="font-medium">Phone Number <span class="text-red-500">*</span></label>
+                <input type="tel" name="phone" placeholder="Enter your phone number" required class="w-full bg-transparent rounded-xl border rounded px-3 py-2 ">
+            </div=>
+
+            <!-- Email -->
+            <div class="my-3 py-2">
+                <label class="font-medium">Email Address <span class="text-red-500">*</span></label>
+                <input type="email" name="email" placeholder="Enter your email address" required class="w-full bg-transparent rounded-xl border rounded px-3 py-2 ">
+            </div=>
+
+            <!-- Company Name -->
+            <div class="my-3 py-2">
+                <label class="font-medium">Company Name</label>
+                <input type="text" name="company" placeholder="Enter your company name" class="w-full bg-transparent rounded-xl border rounded px-3 py-2 ">
+            </div=>
+
+
+            <!-- Download Button (full width) -->
+            <div class="my-6 py-2">
+                <button type="submit" class="rounded-[50pc] my-4 trade-show-toggle-buttons py-2 rounded text-gray-100">
+                Download Brochure
+                </button>
+                <p class="mt-5 text-gray-300 text-xl">Brochure guide (PDF - 2.5 MB, 12 Pages)</p>
+            </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+
+            function toggleModal(show) {
+                const modal = document.getElementById('downloadModal');
+                const brochureForm = document.getElementById('brochureForm');
+                if(show){
+                    if (modal) {
+                        brochureForm.classList.toggle('active');
+                        modal.classList.toggle('active');
+                    }
+                    return;
+                }
+
+                brochureForm.classList.remove('active');
+                modal.classList.remove('active');
+                
+            }
+
+            // Expose to global scope so button can call it
+            window.toggleModal = toggleModal;
+
+            const form = document.getElementById('brochureForm');
+            if (form) {
+            form.addEventListener('submit', function (e) {
+                e.preventDefault();
+
+                if (!form.checkValidity()) {
+                form.reportValidity();
+                return;
+                }
+
+                toggleModal(false);
+
+                // Simulate download
+                const pdfUrl = 'path/to/your-brochure.pdf'; // Update this
+                const link = document.createElement('a');
+                link.href = pdfUrl;
+                link.download = 'brochure.pdf';
+                document.body.appendChild(link); // Needed for Firefox
+                link.click();
+                link.remove();
+            });
+            }
+
+            // Close on Escape key
+            document.addEventListener('keydown', (event) => {
+                if (event.key === 'Escape') {
+                    toggleModal(false)
+                }
+            });
+
+        });
+    
+   </script>
+
     <script src="https://md-aqil.github.io/images/swiper.min.js"></script>
     <script src="https://unpkg.com/@themesberg/flowbite@1.2.0/dist/flowbite.bundle.js"></script>
 
     <script src="/script.js"></script>
-
-    <script>
-
-
-
-        //tabs
-        const tabs = document.querySelectorAll(".tab");
-        const contents = document.querySelectorAll(".tab-content");
-
-        tabs.forEach((tab) => {
-            tab.addEventListener("click", () => {
-                tabs.forEach((t) => t.classList.remove("active"));
-                tab.classList.add("active");
-
-                const selected = tab.getAttribute("data-tab");
-                contents.forEach((c) => {
-                    c.style.display = c.id === selected ? "block" : "none";
-                });
-            });
-        });
-
-
-    </script>
-
-    <script>
-
-        // <!-- Image opacity can be adjusted in the const opacity = index === activeIndex ? 1 : 0.7; line -->
-        const testimonials = [
-            {
-                quote: "I was impressed by the food — every dish is bursting with flavor! And I could really tell that they use high-quality ingredients. The staff was friendly and attentive, going the extra mile. I'll definitely be back for more!",
-                name: "Tamar Mendelson",
-                designation: "Restaurant Critic",
-                src: "https://images.unsplash.com/photo-1512316609839-ce289d3eba0a?q=80&w=1368&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-            },
-            {
-                quote: "This place exceeded all expectations! The atmosphere is inviting, and the staff truly goes above and beyond to ensure a fantastic visit. I'll definitely keep returning for more exceptional dining experience.",
-                name: "Joe Charlescraft",
-                designation: "Frequent Visitor",
-                src: "https://images.unsplash.com/photo-1628749528992-f5702133b686?q=80&w=1368&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fA%3D%3D",
-            },
-            {
-                quote: "Shining Yam is a hidden gem! From the moment I walked in, I knew I was in for a treat. The impeccable service and overall attention to detail created a memorable experience. I highly recommend it!",
-                name: "Martina Edelweist",
-                designation: "Satisfied Customer",
-                src: "https://images.unsplash.com/photo-1524267213992-b76e8577d046?q=80&w=1368&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fA%3D%3D",
-            },
-        ];
-
-        let activeIndex = 0;
-        const imageContainer = document.getElementById('image-container');
-        const nameElement = document.getElementById('name');
-        const designationElement = document.getElementById('designation');
-        const quoteElement = document.getElementById('quote');
-        const prevButton = document.getElementById('prev-button');
-        const nextButton = document.getElementById('next-button');
-
-        function updateTestimonial(direction) {
-            const oldIndex = activeIndex;
-            activeIndex = (activeIndex + direction + testimonials.length) % testimonials.length;
-
-            testimonials.forEach((testimonial, index) => {
-                let img = imageContainer.querySelector(`[data-index="${index}"]`);
-                if (!img) {
-                    img = document.createElement('img');
-                    img.src = testimonial.src;
-                    img.alt = testimonial.name;
-                    img.classList.add('testimonial-image');
-                    img.dataset.index = index;
-                    imageContainer.appendChild(img);
-                }
-
-                const offset = index - activeIndex;
-                const absOffset = Math.abs(offset);
-                const zIndex = testimonials.length - absOffset;
-                const opacity = index === activeIndex ? 1 : 0.7;
-                const scale = 1 - (absOffset * 0.15);
-                const translateY = offset === -1 ? '-20%' : offset === 1 ? '20%' : '0%';
-                const rotateY = offset === -1 ? '15deg' : offset === 1 ? '-15deg' : '0deg';
-
-                img.style.zIndex = zIndex;
-                img.style.opacity = opacity;
-                img.style.transform = `translateY(${translateY}) scale(${scale}) rotateY(${rotateY})`;
-            });
-
-            nameElement.textContent = testimonials[activeIndex].name;
-            designationElement.textContent = testimonials[activeIndex].designation;
-            quoteElement.innerHTML = testimonials[activeIndex].quote.split(' ').map(word => `<span class="word">${word}</span>`).join(' ');
-
-            animateWords();
-        }
-
-        function animateWords() {
-            const words = quoteElement.querySelectorAll('.word');
-            words.forEach((word, index) => {
-                word.style.opacity = '0';
-                word.style.transform = 'translateY(10px)';
-                word.style.filter = 'blur(10px)';
-                setTimeout(() => {
-                    word.style.transition = 'opacity 0.2s ease-in-out, transform 0.2s ease-in-out, filter 0.2s ease-in-out';
-                    word.style.opacity = '1';
-                    word.style.transform = 'translateY(0)';
-                    word.style.filter = 'blur(0)';
-                }, index * 20);
-            });
-        }
-
-        function handleNext() {
-            updateTestimonial(1);
-        }
-
-        function handlePrev() {
-            updateTestimonial(-1);
-        }
-
-        // prevButton.addEventListener('click', handlePrev);
-        // nextButton.addEventListener('click', handleNext);
-
-        // Initial setup
-        updateTestimonial(0);
-
-        // Autoplay functionality
-        const autoplayInterval = setInterval(handleNext, 5000);
-
-        // Stop autoplay on user interaction
-        [prevButton, nextButton].forEach(button => {
-            button.addEventListener('click', () => {
-                clearInterval(autoplayInterval);
-            });
-        });
-
-
-        prevButton.addEventListener('click', handlePrev);
-        nextButton.addEventListener('click', handleNext);
-
-    </script>
-    <script>
-
-
-
-
-        var galleryThumbs = new Swiper('.gallery-thumbs', {
-            effect: 'coverflow',
-            grabCursor: true,
-            centeredSlides: true,
-            slidesPerView: '2',
-            // coverflowEffect: {
-            //   rotate: 50,
-            //   stretch: 0,
-            //   depth: 100,
-            //   modifier: 1,
-            //   slideShadows : true,
-            // },
-
-            coverflowEffect: {
-                rotate: 0,
-                stretch: 0,
-                depth: 50,
-                modifier: 6,
-                slideShadows: false,
-            },
-
-        });
-
-
-        var galleryTop = new Swiper('.swiper-container.testimonial', {
-            speed: 400,
-            spaceBetween: 50,
-            autoplay: {
-                delay: 3000,
-                disableOnInteraction: false,
-            },
-            direction: 'vertical',
-            pagination: {
-                clickable: true,
-                el: '.swiper-pagination',
-                type: 'bullets',
-            },
-            thumbs: {
-                swiper: galleryThumbs
-            }
-        });
-
-    </script>
-
-
+  
 
 
 </body>
