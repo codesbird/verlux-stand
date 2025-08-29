@@ -10,40 +10,60 @@
 }
 
 :root {
-  /* Updated color palette based on your specifications */
-  --primary-dark: #1e2730;
-  --primary-orange: #dd6605a6;
-  --golden-brown: #e6b567;
-  --burnt-orange: #d86c00be;
-  --dark-brown: #926440;
-  --deep-brown: #725a4a;
+  /* Luxury Golden Theme - Based on provided color palette */
+  --luxury-night: #0D0D0D;
+  /* Night - Primary dark */
+  --luxury-gold: #D4AF37;
+  /* Gold metallic - Primary accent */
+  --luxury-seasalt: #F9F9F9;
+  /* Seasalt - Light backgrounds */
+  --luxury-jet: #2E2E2E;
+  /* Jet - Secondary dark */
 
-  /* Matching complementary colors */
-  --warm-cream: #f4e6d3;
-  --soft-amber: #f0cc77;
-  --rich-bronze: #b8834a;
-  --muted-copper: #a67c5a;
-  --charcoal-blue: #2a3640;
-  --dusty-gold: #dab76f;
+  /* Derived luxury colors for enhanced palette */
+  --luxury-gold-dark: #B8941F;
+  /* Darker gold for hover states */
+  --luxury-gold-light: #E6C547;
+  /* Lighter gold for highlights */
+  --luxury-cream: #FBF9F5;
+  /* Warm cream variant */
+  --luxury-charcoal: #1A1A1A;
+  /* Deep charcoal */
+  --luxury-bronze: #CD7F32;
+  /* Complementary bronze */
+  --luxury-champagne: #F7E7CE;
+  /* Light champagne */
 
-  /* Original preserved colors that work with the theme */
-  --face_color: #ffd7ab;
-  --light_face: #ffd7abba;
+  /* Legacy color mappings for compatibility */
+  --primary-dark: var(--luxury-night);
+  --primary-orange: var(--luxury-gold);
+  --golden-brown: var(--luxury-gold);
+  --burnt-orange: var(--luxury-gold-dark);
+  --dark-brown: var(--luxury-jet);
+  --deep-brown: var(--luxury-charcoal);
+  --warm-cream: var(--luxury-seasalt);
+  --soft-amber: var(--luxury-gold-light);
+  --rich-bronze: var(--luxury-bronze);
+  --muted-copper: var(--luxury-jet);
+  --charcoal-blue: var(--luxury-charcoal);
+  --dusty-gold: var(--luxury-gold);
+  --face_color: var(--luxury-gold);
+  --light_face: var(--luxury-champagne);
   --white: #ffffff;
   --black: #000;
   --silver: #C0C0C0;
-  --light_black: #000000c9;
+  --light_black: var(--luxury-charcoal);
 
-  /* Updated gradients */
-  --tw-gradient-to: #926440 !important;
-  --tw-gradient-from: #725a4a !important;
+  /* Updated gradients with luxury theme */
+  --tw-gradient-to: var(--luxury-gold) !important;
+  --tw-gradient-from: var(--luxury-night) !important;
 }
 
 body {
   font-family: 'Roboto', sans-serif;
   font-size: 16px;
-  background-color: var(--warm-cream);
-  color: var(--primary-dark);
+  background-color: color-mix(in srgb, var(--luxury-gold)12%, var(--luxury-bronze) 0%);
+  color: var(--luxury-night);
 }
 
 html {
@@ -53,6 +73,34 @@ html {
 .tab:active {
   background-color: var(--golden-brown);
   color: var(--primary-dark);
+}
+
+.golden-border-light-1 {
+  border: 1px solid var(--luxury-gold-light);
+}
+
+.golden-border-light-2 {
+  border: 2px solid var(--luxury-gold-light);
+}
+
+.golden-border-dark-1 {
+  border: 1px solid var(--luxury-gold-dark);
+}
+
+.golden-border-dark-2 {
+  border: 2px solid var(--luxury-gold-dark);
+}
+
+.golden-text {
+  color: var(--luxury-gold);
+}
+
+.golden-text-light {
+  color: var(--luxury-gold-light);
+}
+
+.golden-text-dark {
+  color: var(--luxury-gold-dark);
 }
 
 .container {
@@ -127,7 +175,6 @@ header {
   position: relative;
   margin: 0;
   height: 100%;
-  padding-right: 30px;
 }
 
 .navbar_half:before {
@@ -161,7 +208,7 @@ header {
 
 .container_menu {
   /* max-width: 65rem; */
-  padding: 0 2rem;
+  padding: 0 0rem 0 2px;
   margin: 0 auto;
   display: flex;
   position: relative;
@@ -175,14 +222,17 @@ header {
 
 .nav-links {
   flex: 2;
+  position: relative;
 }
 
 .nav-links>ul {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-left: 45rem;
-  margin-top: 8px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 1%;
 }
 
 .nav-link {
@@ -199,12 +249,13 @@ header {
   align-items: center;
   justify-content: space-between;
   transition: .5s;
-  border: 1px solid;
+  border: 1px solid var(--luxury-gold-light);
   text-align: center;
   padding: 4px 20px;
   border-radius: 50px;
-  background: linear-gradient(45deg, black, transparent);
-  box-shadow: 0px 2px 5px rgb(0 0 0 / 72%), 1px 1px 3px rgb(111 111 111);
+  /* background: linear-gradient(45deg, black, transparent); */
+  background: linear-gradient(45deg, var(--golden-brown), var(--burnt-orange));
+  box-shadow: 2px 4px 8px 3px color-mix(in hsl shorter hue, var(--burnt-orange) 40%, #e1b62a8c);
 }
 
 .nav-link:nth-child(1) {
@@ -220,23 +271,43 @@ header {
 }
 
 .nav-link:hover>a {
-  transform: scale(1.1);
+  box-shadow: 2px 4px 8px 1px color-mix(in hsl shorter hue, var(--golden-brown), #e1b62a8c);
+  background: linear-gradient(120deg, var(--golden-brown), var(--burnt-orange)70%);
+  border: 1px solid var(--luxury-cream);
 }
 
 .dropdownMenu {
   width: 20rem;
-  background: linear-gradient(144deg, #362e26, #876a4d9e);
   position: absolute;
+  line-height: 3rem;
+  color: var(--clr-light);
+  letter-spacing: 1px;
+  font-size: 17px;
+  align-items: center;
+  justify-content: start;
+  transition: .5s;
+  border: 1px solid var(--luxury-gold-light);
+  text-align: start;
+  background: linear-gradient(45deg, var(--golden-brown), var(--burnt-orange));
+  box-shadow: 2px 4px 8px 3px color-mix(in hsl shorter hue, var(--burnt-orange) 40%, #e1b62a8c);
+}
+
+.dropdownMenu ul {
+  width: 100%;
+}
+
+.dropdownMenu ul li {
+  width: 100%;
+  padding: 3px;
 }
 
 .dropdownMenu ul li a {
   color: white;
+  width: 100%;
 }
 
-.dropdownMenu ul li a:hover {
-  color: #f1eae6;
-  background: #362e26;
-
+.dropdownMenu ul li:hover {
+  background: linear-gradient(45deg, var(--luxury-gold-dark), var(--luxury-gold-dark));
 }
 
 
@@ -339,7 +410,7 @@ header {
 
 /* Hero Section */
 .wrap-home {
-  background: linear-gradient(140deg, var(--primary-dark) 25%, var(--primary-orange));
+  background: linear-gradient(140deg, var(--primary-dark) 15%, var(--primary-orange));
   position: relative;
   z-index: 10;
   background-blend-mode: multiply;
@@ -381,7 +452,7 @@ header {
 .left-section-heading {
   font-family: 'Playfair Display', Arial, Helvetica, sans-serif;
   font-weight: 700;
-  font-size: 40px;
+  font-size: 30px;
   letter-spacing: 2px;
   text-transform: uppercase;
 }
@@ -402,29 +473,32 @@ header {
 .contact-hero .heading-1 {
   background: linear-gradient(to right, var(--golden-brown), var(--burnt-orange));
   font-weight: 800;
-  font-size: 40px;
+  font-size: 55px;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   color: transparent;
 }
 
 .left-section-heading .head-2 {
-  font-size: 40px;
+  font-size: 55px;
   font-weight: 800;
   color: var(--white);
 }
 
-.download-brochur-btn {
-  background: linear-gradient(45deg, var(--dark-brown), var(--deep-brown));
+.download-brochur-btn,
+.rent-my-booth-btn {
+  /* background: linear-gradient(45deg, var(--golden-brown), var(--burnt-orange)); */
+  background: linear-gradient(45deg, var(--golden-brown), var(--burnt-orange));
   color: white;
   border: none;
   transition: all 0.3s ease;
+  border-radius: 50px;
 }
 
-.download-brochur-btn:hover {
-  background: linear-gradient(45deg, var(--burnt-orange), var(--deep-brown));
-  color: var(--warm-cream);
+.download-brochur-btn:hover,
+.rent-my-booth-btn:hover {
   transform: translateY(-2px);
+  box-shadow: 2px 4px 8px 1px color-mix(in hsl shorter hue, var(--burnt-orange) 40%, #e1b62a8c);
 }
 
 .kpi-card-body .kpi-card {
@@ -464,17 +538,18 @@ header {
   opacity: 0.9;
 }
 
-.download-modal{
+.download-modal {
   z-index: -100 !important;
   /* display: none !important; */
   opacity: 0;
 }
-.download-modal.active{
+
+.download-modal.active {
   z-index: 10 !important;
   opacity: 1;
 }
 
-.brochure-form{
+.brochure-form {
   opacity: 0;
   top: -50%;
   transition: 0.5s;
@@ -495,13 +570,19 @@ header {
 }
 
 .about-cards {
-  background: linear-gradient(309deg, var(--golden-brown), var(--burnt-orange) 50%);
+  background: linear-gradient(309deg, var(--luxury-gold-light) 50%, var(--burnt-orange));
+}
+
+.about-cards h6 {
+  color: white !important;
 }
 
 .trade-show-toggle-buttons {
-  background: linear-gradient(309deg, var(--golden-brown), var(--burnt-orange) 50%);
-  transition: background 1s;
-
+  border: 3px solid var(--luxury-gold-light);
+  background: linear-gradient(45deg, var(--golden-brown), var(--burnt-orange));
+  transition: 1s;
+  border-radius: 50px;
+  color: white;
 }
 
 .trade-show-toggle-buttons:hover {
@@ -511,13 +592,14 @@ header {
 .single-service {
   position: relative;
   margin-top: 30px;
-  background: linear-gradient(135deg, var(--warm-cream), var(--white));
+  /* background: linear-gradient(135deg, var(--luxury-gold), var(--luxury-gold-dark)); */
   border: 1px solid var(--golden-brown);
   border-radius: 10px;
   padding: 40px 30px;
   overflow: hidden;
   height: 100%;
   transition: all 0.3s ease;
+  box-shadow: 0 10px 30px 4px rgba(30, 39, 48, 0.15);
 }
 
 .single-service:hover {
@@ -538,7 +620,7 @@ header {
   transform: translate(40%, -40%);
   width: 150px;
   height: 150px;
-  background: linear-gradient(135deg, var(--golden-brown), var(--burnt-orange));
+  background: linear-gradient(135deg, var(--luxury-gold), var(--luxury-gold-light));
   border: 6px solid var(--face_color);
   border-radius: 50%;
   opacity: 0.6;
@@ -567,7 +649,7 @@ header {
   text-align: center;
   color: var(--white);
   font-size: 30px;
-  transition: all .3s;
+  transition: all 1s;
 }
 
 .single-service:hover .icon {
@@ -576,25 +658,50 @@ header {
   transform: scale(1.1);
 }
 
-.cutsom-booths-exhibit-card {
-  background: linear-gradient(135deg, var(--golden-brown), var(--muted-copper));
+
+.custom-booths-exhibit-card {
+  background: linear-gradient(135deg, var(--luxury-gold), var(--luxury-gold-dark));
   transition: transform 1s;
 }
 
-.cutsom-booths-exhibit-card a {
+.custom-booths-exhibit-card a {
   color: white;
   font-family: 'Times New Roman', Times, serif;
 }
 
-.cutsom-booths-exhibit-card p {
+.custom-booths-exhibit-card p {
   font-size: 1.5rem;
+  transition: 1s;
   color: rgb(224, 219, 219);
 }
+.single-service:hover p{
+  color: white;
+}
 
-.cutsom-booths-exhibit-card:hover {
-  background: linear-gradient(135deg, var(--deep-brown) 5%, var(--muted-copper));
+.custom-booths-exhibit-card:hover {
+  background: linear-gradient(135deg, var(--luxury-gold) 70%, var(--luxury-gold-dark));
   /* margin-top: 5px; */
   transform: scale(1.1);
+}
+
+
+.country-cards {
+  border: 4px solid var(--luxury-gold-light);
+  /* overflow: hidden; */
+}
+
+.country-cards img {
+  border: 4px solid var(--luxury-gold-light);
+}
+
+.country-cards:hover {
+  transform: translateY(-5px);
+  box-shadow: 2px 10px 40px 1px color-mix(in hsl shorter hue, var(--luxury-gold) 40%, var(--luxury-gold-light));
+}
+
+.country-cards-title {
+  background: linear-gradient(45deg, var(--luxury-gold-light), var(--luxury-gold));
+  color: white !important;
 }
 
 /* Card CSS */
@@ -773,12 +880,19 @@ button:hover {
 
 
 .clarity-card {
-  background: linear-gradient(309deg, var(--golden-brown), var(--burnt-orange) 50%);
+  background: linear-gradient(45deg, var(--luxury-gold), var(--luxury-gold-light));
+  border: 4px solid var(--luxury-gold);
+  transition: 0.5s;
+}
+
+.clarity-card:hover {
+  border: 4px solid var(--luxury-gold-light);
+  transform: translateY(-5px);
 }
 
 .clarity-card .icon-pop {
-  background: linear-gradient(309deg, var(--charcoal-blue), var(--burnt-orange) 50%);
-  box-shadow: 0 0 10px var(--golden-brown);
+  background: linear-gradient(45deg, var(--luxury-gold-dark), var(--luxury-gold-light));
+  box-shadow: 10px 5px 10px var(--golden-brown);
 }
 
 .testimonial-container {
@@ -840,10 +954,34 @@ video {
 }
 
 footer .footer-container {
-  background: linear-gradient(309deg, var(--golden-brown), var(--face_color) 50%);
+  /* background: linear-gradient(45deg, var(--luxury-gold-light), var(--burnt-orange)); */
+  background: linear-gradient(120deg, var(--luxury-gold-light) 1%, rgba(146, 100, 64, 0.6)), url(/assets/images/hire_bg.png) no-repeat var(--face_color);
+  border-top: 2px solid var(--luxury-gold);
 }
 
+.footer-container .logo {
+  color: white;
+}
 
+.footer-container h6 {
+  color: white;
+}
+
+.footer-container li a,
+.footer-container span {
+  color: rgb(240, 232, 232);
+}
+
+.footer-container li a:hover {
+  color: rgb(255, 255, 255) !important;
+  transform: scale(1.001);
+}
+
+.stands-background {
+  background-color: rgb(249 201 50);
+  border-radius: 6px;
+  box-shadow: 0px 0px 5px 3px #9b7c15;
+}
 
 /* ------------------------------------------------------- */
 
@@ -893,7 +1031,11 @@ footer .footer-container {
 
   .nav-links>ul {
     flex-direction: column;
-    margin-left: 0;
+    margin-left:0px;
+    position:unset !important;
+    top:unset !important;
+    transform:unset !important;
+    right:unset !important;
   }
 
   .nav-link {
@@ -904,12 +1046,15 @@ footer .footer-container {
 
   .nav-link>a {
     line-height: 1;
-    padding: 1.6rem 2rem;
+    padding: 1.6rem 2rem !important;
     display: block;
-    font-size: 12px;
     margin: 5px;
     border: none;
     border-radius: 0%;
+    font-size: 1.4rem;
+    text-align: start;
+    box-shadow:unset;
+    border-radius: 3px;
   }
 
   .nav-link:nth-child(1) {
@@ -925,11 +1070,6 @@ footer .footer-container {
     content: ' ';
     width: 80%;
     left: -12%;
-    text-align: start;
-  }
-
-  .nav-links ul {
-    padding: 5px;
     text-align: start;
   }
 
@@ -961,10 +1101,44 @@ footer .footer-container {
     opacity: 0;
     transform: translateY(15px);
   }
-}
+
+  .dropdownMenu {
+    width: 98%;
+    background: transparent !important;
+    border: none;
+    box-shadow: none;
+  }
+
+  .dropdownMenu ul li {
+    padding: 4px 15px;
+    border-radius: 50px;
+    background: linear-gradient(45deg, var(--golden-brown), var(--burnt-orange));
+    line-height: 1;
+    padding: 1.1rem 2rem;
+    display: block;
+    font-size: 1.4rem;
+    border: none;
+    border-radius: 0%;
+    margin: 10px 7px;
+    border-radius: 3px;
+  }
 
 
-@media (max-width: 768px) {
+  .dropdownMenu ul li:hover {
+    border: 1px solid white;
+  }
+
+  .nav-links {
+    position: unset;
+  }
+
+  .nav-links>ul {
+    position: unset;
+    top: unset;
+    transform: unset;
+    right: unset;
+
+  }
 
   .diagonal-clip,
   .diagonal-clip-video {
@@ -981,6 +1155,10 @@ footer .footer-container {
 
   .hero-parts video {
     box-shadow: 0 0 5px black;
+  }
+
+  video {
+    width: 100%;
   }
 }
 
@@ -1050,10 +1228,97 @@ footer .footer-container {
   opacity: 0;
 }
 
-.trade-show-hero{
+.scrolltotop {
+  bottom: -10%;
+  right: 1%;
+  position: fixed;
+  z-index: 1000;
+  transition: 0.5s;
+  opacity: 0;
+  width: 50px;
+  height: 50px;
+}
+
+.scrolltotop.active {
+  bottom: 2%;
+  opacity: 1;
+
+}
+
+.scrolltotop img {
+  animation: scrolltotop-ani 1s linear infinite;
+}
+
+@keyframes scrolltotop-ani {
+  0% {
+    margin-top: 0px;
+  }
+
+  50% {
+    margin-top: -5px;
+  }
+
+  100% {
+    margin-top: 5px;
+  }
+}
+
+.trade-show-hero {
   background: linear-gradient(140deg, var(--primary-dark) 25%, var(--primary-orange));
 }
 
-.custom-exhibit-rental{
+.custom-exhibit-rental {
   background: linear-gradient(140deg, var(--primary-dark) 25%, var(--primary-orange));
+}
+
+.social-media a {
+
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  box-shadow: 4px 5px 8px 0px var(--luxury-gold-dark);
+  border: 2px solid var(--luxury-champagne);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  background: linear-gradient(45deg, var(--golden-brown), var(--burnt-orange));
+  transition: all 0.7s;
+}
+
+.social-media a:nth-child(1) {
+  background: linear-gradient(to right, #1879e7, #1da3fd, #048bc0);
+
+}
+
+.social-media a:nth-child(2) {
+  color: color-mix(in srgb, color percentage, color percentage);
+  background: linear-gradient(to right, #833ab4, #fd1d1d, #fcb045);
+}
+
+.social-media a:nth-child(3) {
+  background: linear-gradient(to right, #414141, #0d0d0e, #040505);
+}
+
+.social-media a:nth-child(4) {
+  background: linear-gradient(to right, #ff1e1e, #fd1d4e);
+}
+
+.social-media a:hover {
+  /* background: linear-gradient(45deg, var(--golden-brown), var(--luxury-bronze)); */
+  transform: translateY(-5px);
+}
+
+.contactform input,
+.contactform textarea {
+  color: var(--luxury-gold-light);
+  font-weight: 400;
+  background-color: transparent !important;
+}
+
+.contactform input::placeholder,
+.contactform textarea::placeholder {
+  color: color-mix(in srgb, var(--luxury-gold-dark), gray 40%);
 }

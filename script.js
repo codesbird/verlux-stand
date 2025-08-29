@@ -1,95 +1,68 @@
-
-/* Navbar toggler */
-
-
-/* Add icon on .nav-item if dropdown exists */
-const navItems = document.querySelectorAll(".nav-item");
-
-
-
-//form
-const form = document.getElementById("contactForm");
-const errorBox = document.getElementById("errorBox");
-
-try{
-
-  form.addEventListener("submit", function (e) {
-    if (!form.checkValidity()) {
-      e.preventDefault();
-      errorBox.style.display = "block";
-    } else {
-      errorBox.style.display = "none";
-    }
-  });
-}
-catch(e){
-  
-}
-
-
-// Generate random CAPTCHA
-function generateCaptcha() {
-  const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-  let captcha = '';
-  for (let i = 0; i < 5; i++) {
-    captcha += characters.charAt(Math.floor(Math.random() * characters.length));
+// Utility function to safely query elements
+function safeQuerySelector(selector) {
+  try {
+    return document.querySelector(selector);
+  } catch (error) {
+    console.warn(`Element not found: ${selector}`);
+    return null;
   }
-  return captcha;
 }
 
-// Display CAPTCHA
-const captchaElement = document.getElementById('captcha');
-const refreshButton = document.getElementById('refresh-btn');
-const verifyButton = document.getElementById('verify-btn');
-const inputField = document.getElementById('captcha-input');
-const resultMessage = document.getElementById('result-message');
+function safeQuerySelectorAll(selector) {
+  try {
+    return document.querySelectorAll(selector);
+  } catch (error) {
+    console.warn(`Elements not found: ${selector}`);
+    return [];
+  }
+}
 
-let currentCaptcha = generateCaptcha();
-captchaElement.textContent = currentCaptcha;
+// Tab functionality with error handling
+function initializeTabs() {
+  try {
+    const tabs = safeQuerySelectorAll(".tab");
+    const contents = safeQuerySelectorAll(".tab-content");
 
-// Refresh CAPTCHA
-refreshButton.addEventListener('click', () => {
-  currentCaptcha = generateCaptcha();
-  captchaElement.textContent = currentCaptcha;
-  resultMessage.textContent = '';
-  inputField.value = '';
-});
+    if (tabs.length === 0 || contents.length === 0) {
+      console.log("Tab elements not found on this page");
+      return;
+    }
 
-// Verify CAPTCHA
-// verifyButton.addEventListener('click', () => {
-//   const userInput = inputField.value;
-//   if (userInput === currentCaptcha) {
-//     resultMessage.textContent = 'Captcha Verified Successfully!';
-//     resultMessage.style.color = 'green';
-//   } else {
-//     resultMessage.textContent = 'Captcha Verification Failed. Try Again!';
-//     resultMessage.style.color = 'red';
-//   }
-// });
+    tabs.forEach((tab) => {
+      tab.addEventListener("click", () => {
+        try {
+          // Remove active class from all tabs
+          tabs.forEach((t) => t.classList.remove("active"));
+          tab.classList.add("active");
 
-// responsive js
+          // Get selected tab data
+          const selected = tab.getAttribute("data-tab");
+          if (!selected) {
+            console.warn("Tab missing data-tab attribute");
+            return;
+          }
 
-
-
-//tabs
-const tabs = document.querySelectorAll(".tab");
-const contents = document.querySelectorAll(".tab-content");
-
-tabs.forEach((tab) => {
-  tab.addEventListener("click", () => {
-    tabs.forEach((t) => t.classList.remove("active"));
-    tab.classList.add("active");
-
-    const selected = tab.getAttribute("data-tab");
-    contents.forEach((c) => {
-      c.style.display = c.id === selected ? "block" : "none";
+          // Show/hide content
+          contents.forEach((c) => {
+            if (c.id === selected) {
+              c.style.display = "block";
+            } else {
+              c.style.display = "none";
+            }
+          });
+        } catch (error) {
+          console.error("Error in tab click handler:", error);
+        }
+      });
     });
-  });
-});
 
+    console.log("Tab functionality initialized successfully");
+  } catch (error) {
+    console.error("Error initializing tabs:", error);
+  }
+}
 
-
-// <!-- Image opacity can be adjusted in the const opacity = index === activeIndex ? 1 : 0.7; line -->
+// Testimonials data and functionality
 const testimonials = [
   {
     quote: "I was impressed by the food — every dish is bursting with flavor! And I could really tell that they use high-quality ingredients. The staff was friendly and attentive, going the extra mile. I'll definitely be back for more!",
@@ -111,174 +84,337 @@ const testimonials = [
   },
 ];
 
+// Global testimonial variables
 let activeIndex = 0;
-const imageContainer = document.getElementById('image-container');
-const nameElement = document.getElementById('name');
-const designationElement = document.getElementById('designation');
-const quoteElement = document.getElementById('quote');
-const prevButton = document.getElementById('prev-button');
-const nextButton = document.getElementById('next-button');
+let autoplayInterval = null;
 
-function updateTestimonial(direction) {
-  const oldIndex = activeIndex;
-  activeIndex = (activeIndex + direction + testimonials.length) % testimonials.length;
+// Initialize testimonials functionality
+function initializeTestimonials() {
+  try {
+    const imageContainer = safeQuerySelector('#image-container');
+    const nameElement = safeQuerySelector('#name');
+    const designationElement = safeQuerySelector('#designation');
+    const quoteElement = safeQuerySelector('#quote');
+    const prevButton = safeQuerySelector('#prev-button');
+    const nextButton = safeQuerySelector('#next-button');
 
-  testimonials.forEach((testimonial, index) => {
-    let img = imageContainer.querySelector(`[data-index="${index}"]`);
-    if (!img) {
-      img = document.createElement('img');
-      img.src = testimonial.src;
-      img.alt = testimonial.name;
-      img.classList.add('testimonial-image');
-      img.dataset.index = index;
-      imageContainer.appendChild(img);
+    // Check if testimonial elements exist
+    if (!imageContainer || !nameElement || !designationElement || !quoteElement) {
+      console.log("Testimonial elements not found on this page");
+      return;
     }
 
-    const offset = index - activeIndex;
-    const absOffset = Math.abs(offset);
-    const zIndex = testimonials.length - absOffset;
-    const opacity = index === activeIndex ? 1 : 0.7;
-    const scale = 1 - (absOffset * 0.15);
-    const translateY = offset === -1 ? '-20%' : offset === 1 ? '20%' : '0%';
-    const rotateY = offset === -1 ? '15deg' : offset === 1 ? '-15deg' : '0deg';
+    function updateTestimonial(direction) {
+      try {
+        const oldIndex = activeIndex;
+        activeIndex = (activeIndex + direction + testimonials.length) % testimonials.length;
 
-    img.style.zIndex = zIndex;
-    img.style.opacity = opacity;
-    img.style.transform = `translateY(${translateY}) scale(${scale}) rotateY(${rotateY})`;
+        testimonials.forEach((testimonial, index) => {
+          let img = imageContainer.querySelector(`[data-index="${index}"]`);
+          if (!img) {
+            img = document.createElement('img');
+            img.src = testimonial.src;
+            img.alt = testimonial.name;
+            img.classList.add('testimonial-image');
+            img.dataset.index = index;
+            imageContainer.appendChild(img);
+          }
+
+          const offset = index - activeIndex;
+          const absOffset = Math.abs(offset);
+          const zIndex = testimonials.length - absOffset;
+          const opacity = index === activeIndex ? 1 : 0.7;
+          const scale = 1 - (absOffset * 0.15);
+          const translateY = offset === -1 ? '-20%' : offset === 1 ? '20%' : '0%';
+          const rotateY = offset === -1 ? '15deg' : offset === 1 ? '-15deg' : '0deg';
+
+          img.style.zIndex = zIndex;
+          img.style.opacity = opacity;
+          img.style.transform = `translateY(${translateY}) scale(${scale}) rotateY(${rotateY})`;
+        });
+
+        nameElement.textContent = testimonials[activeIndex].name;
+        designationElement.textContent = testimonials[activeIndex].designation;
+        quoteElement.innerHTML = testimonials[activeIndex].quote
+          .split(' ')
+          .map(word => `<span class="word">${word}</span>`)
+          .join(' ');
+
+        animateWords();
+      } catch (error) {
+        console.error("Error updating testimonial:", error);
+      }
+    }
+
+    function animateWords() {
+      try {
+        const words = quoteElement.querySelectorAll('.word');
+        words.forEach((word, index) => {
+          word.style.opacity = '0';
+          word.style.transform = 'translateY(10px)';
+          word.style.filter = 'blur(10px)';
+          setTimeout(() => {
+            word.style.transition = 'opacity 0.2s ease-in-out, transform 0.2s ease-in-out, filter 0.2s ease-in-out';
+            word.style.opacity = '1';
+            word.style.transform = 'translateY(0)';
+            word.style.filter = 'blur(0)';
+          }, index * 20);
+        });
+      } catch (error) {
+        console.error("Error animating words:", error);
+      }
+    }
+
+    function handleNext() {
+      updateTestimonial(1);
+    }
+
+    function handlePrev() {
+      updateTestimonial(-1);
+    }
+
+    // Add event listeners for buttons if they exist
+    if (prevButton) {
+      prevButton.addEventListener('click', () => {
+        try {
+          handlePrev();
+          if (autoplayInterval) {
+            clearInterval(autoplayInterval);
+            autoplayInterval = null;
+          }
+        } catch (error) {
+          console.error("Error in prev button handler:", error);
+        }
+      });
+    }
+
+    if (nextButton) {
+      nextButton.addEventListener('click', () => {
+        try {
+          handleNext();
+          if (autoplayInterval) {
+            clearInterval(autoplayInterval);
+            autoplayInterval = null;
+          }
+        } catch (error) {
+          console.error("Error in next button handler:", error);
+        }
+      });
+    }
+
+    // Initial setup
+    updateTestimonial(0);
+
+    // Autoplay functionality
+    autoplayInterval = setInterval(handleNext, 5000);
+
+    console.log("Testimonials functionality initialized successfully");
+  } catch (error) {
+    console.error("Error initializing testimonials:", error);
+  }
+}
+
+// Swiper initialization with error handling
+function initializeSwiper() {
+  try {
+    // Check if Swiper library is available
+    if (typeof Swiper === 'undefined') {
+      console.log("Swiper library not found on this page");
+      return;
+    }
+
+    const galleryThumbsElement = safeQuerySelector('.gallery-thumbs');
+    const testimonialSwiperElement = safeQuerySelector('.swiper-container.testimonial');
+
+    if (galleryThumbsElement) {
+      try {
+        const galleryThumbs = new Swiper('.gallery-thumbs', {
+          effect: 'coverflow',
+          grabCursor: true,
+          centeredSlides: true,
+          slidesPerView: '2',
+          coverflowEffect: {
+            rotate: 0,
+            stretch: 0,
+            depth: 50,
+            modifier: 6,
+            slideShadows: false,
+          },
+        });
+        console.log("Gallery thumbs Swiper initialized successfully");
+      } catch (error) {
+        console.error("Error initializing gallery thumbs Swiper:", error);
+      }
+    }
+
+    if (testimonialSwiperElement) {
+      try {
+        const galleryTop = new Swiper('.swiper-container.testimonial', {
+          speed: 400,
+          spaceBetween: 50,
+          autoplay: {
+            delay: 3000,
+            disableOnInteraction: false,
+          },
+          direction: 'vertical',
+          pagination: {
+            clickable: true,
+            el: '.swiper-pagination',
+            type: 'bullets',
+          },
+          thumbs: {
+            swiper: galleryThumbs || null
+          }
+        });
+        console.log("Testimonial Swiper initialized successfully");
+      } catch (error) {
+        console.error("Error initializing testimonial Swiper:", error);
+      }
+    }
+  } catch (error) {
+    console.error("Error in Swiper initialization:", error);
+  }
+}
+
+// Audio toggle functionality with error handling
+function initializeAudioToggle() {
+  try {
+    // Make toggleAudio function available globally
+    window.toggleAudio = function (e) {
+      try {
+        if (!e || !e.firstElementChild) {
+          console.warn("Invalid element passed to toggleAudio");
+          return;
+        }
+
+        const icons = e.firstElementChild;
+        const video = safeQuerySelector('#video_');
+
+        if (!video) {
+          console.warn("Video element not found");
+          return;
+        }
+
+        if (icons.classList.contains('fa-volume-mute')) {
+          icons.classList.replace('fa-volume-mute', 'fa-volume-up');
+          video.muted = !video.muted;
+        } else if (icons.classList.contains('fa-volume-up')) {
+          icons.classList.replace('fa-volume-up', 'fa-volume-mute');
+          video.muted = !video.muted;
+        }
+      } catch (error) {
+        console.error("Error in toggleAudio:", error);
+      }
+    };
+
+    console.log("Audio toggle functionality initialized successfully");
+  } catch (error) {
+    console.error("Error initializing audio toggle:", error);
+  }
+}
+
+// Chat box functionality with error handling
+function initializeChatBox() {
+  try {
+    const chatBox = safeQuerySelector('#chatBox');
+    const contactButton = safeQuerySelector('#contacti_button');
+
+    if (!chatBox || !contactButton) {
+      console.log("Chat box elements not found on this page");
+      return;
+    }
+
+    // Make toggleChatBox function available globally
+    window.toggleChatBox = function (type = 'b') {
+      try {
+        if (type === 'e') {
+          chatBox.classList.remove('active');
+          contactButton.classList.remove('active');
+          return;
+        }
+        chatBox.classList.toggle('active');
+        contactButton.classList.toggle('active');
+      } catch (error) {
+        console.error("Error in toggleChatBox:", error);
+      }
+    };
+
+    // Close on outside click
+    document.addEventListener('click', (event) => {
+      try {
+        if (!chatBox.contains(event.target) && !contactButton.contains(event.target)) {
+          window.toggleChatBox("e");
+        }
+      } catch (error) {
+        console.error("Error in outside click handler:", error);
+      }
+    });
+
+    // Close on Escape key
+    document.addEventListener('keydown', (event) => {
+      try {
+        if (event.key === 'Escape') {
+          const dropdownMenu = safeQuerySelector('.dropdown-menu');
+          if (dropdownMenu) {
+            dropdownMenu.classList.add('hidden');
+          }
+          window.toggleChatBox("e");
+        }
+      } catch (error) {
+        console.error("Error in escape key handler:", error);
+      }
+    });
+
+    console.log("Chat box functionality initialized successfully");
+  } catch (error) {
+    console.error("Error initializing chat box:", error);
+  }
+}
+
+// Main initialization function
+function initializeAll() {
+  console.log("Starting JavaScript initialization...");
+
+  // Initialize all components
+  initializeTabs();
+  initializeTestimonials();
+  initializeSwiper();
+  initializeAudioToggle();
+  initializeChatBox();
+
+  console.log("JavaScript initialization completed");
+}
+
+// Wait for DOM to be fully loaded before initializing
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initializeAll);
+} else {
+  // DOM is already loaded
+  initializeAll();
+}
+
+// ----------------------------------------------------------------------------
+// scroll to top button functionality 
+const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 200) { // Show after scrolling 200px
+    scrollToTopBtn.classList.add('active');
+  } else {
+    scrollToTopBtn.classList.remove('active');
+  }
+});
+
+scrollToTopBtn.addEventListener('click', () => {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
   });
-
-  nameElement.textContent = testimonials[activeIndex].name;
-  designationElement.textContent = testimonials[activeIndex].designation;
-  quoteElement.innerHTML = testimonials[activeIndex].quote.split(' ').map(word => `<span class="word">${word}</span>`).join(' ');
-
-  animateWords();
-}
-
-function animateWords() {
-  const words = quoteElement.querySelectorAll('.word');
-  words.forEach((word, index) => {
-    word.style.opacity = '0';
-    word.style.transform = 'translateY(10px)';
-    word.style.filter = 'blur(10px)';
-    setTimeout(() => {
-      word.style.transition = 'opacity 0.2s ease-in-out, transform 0.2s ease-in-out, filter 0.2s ease-in-out';
-      word.style.opacity = '1';
-      word.style.transform = 'translateY(0)';
-      word.style.filter = 'blur(0)';
-    }, index * 20);
-  });
-}
-
-function handleNext() {
-  updateTestimonial(1);
-}
-
-function handlePrev() {
-  updateTestimonial(-1);
-}
-
-// prevButton.addEventListener('click', handlePrev);
-// nextButton.addEventListener('click', handleNext);
-
-// Initial setup
-updateTestimonial(0);
-
-// Autoplay functionality
-const autoplayInterval = setInterval(handleNext, 5000);
-
-// Stop autoplay on user interaction
-[prevButton, nextButton].forEach(button => {
-  button.addEventListener('click', () => {
-    clearInterval(autoplayInterval);
-  });
 });
 
-
-prevButton.addEventListener('click', handlePrev);
-nextButton.addEventListener('click', handleNext);
-
-
-var galleryThumbs = new Swiper('.gallery-thumbs', {
-  effect: 'coverflow',
-  grabCursor: true,
-  centeredSlides: true,
-  slidesPerView: '2',
-  // coverflowEffect: {
-  //   rotate: 50,
-  //   stretch: 0,
-  //   depth: 100,
-  //   modifier: 1,
-  //   slideShadows : true,
-  // },
-
-  coverflowEffect: {
-    rotate: 0,
-    stretch: 0,
-    depth: 50,
-    modifier: 6,
-    slideShadows: false,
-  },
-
-});
-
-
-var galleryTop = new Swiper('.swiper-container.testimonial', {
-  speed: 400,
-  spaceBetween: 50,
-  autoplay: {
-    delay: 3000,
-    disableOnInteraction: false,
-  },
-  direction: 'vertical',
-  pagination: {
-    clickable: true,
-    el: '.swiper-pagination',
-    type: 'bullets',
-  },
-  thumbs: {
-    swiper: galleryThumbs
-  }
-});
-
-function toggleAudio(e) {
-  let icons = e.firstElementChild
-  let video = document.getElementById('video_')
-  if (icons.classList.contains('fa-volume-mute')) {
-    icons.classList.replace('fa-volume-mute', 'fa-volume-up')
-    video.muted = !video.muted;
-  }
-  else {
-    icons.classList.replace('fa-volume-up', 'fa-volume-mute')
-    video.muted = !video.muted;
-  }
+function scrollToElement(targe_t) {
+  let target = document.getElementById(targe_t);
+  target.scrollIntoView({
+    behavior: 'smooth'
+  })
 }
-
-// -----------------------------------------------------------
-// Contact PopUP window 
-function toggleChatBox(type = 'b') {
-  const box = document.getElementById('chatBox');
-  if (type === 'e') {
-    box.classList.remove('active');
-    contacti_button.classList.remove('active');
-    return;
-  }
-  box.classList.toggle('active');
-  contacti_button.classList.toggle('active');
-}
-let whatsapp_btn = document.getElementById("contacti_button")
-let whatsapp_card = document.getElementById("chatBox")
-
-// Close on outside click
-document.addEventListener('click', (event) => {
-  if (!whatsapp_card.contains(event.target) && !whatsapp_btn.contains(event.target)) {
-    toggleChatBox("e")
-  }
-});
-
-// Close on Escape key
-document.addEventListener('keydown', (event) => {
-  if (event.key === 'Escape') {
-    dropdownMenu.classList.add('hidden');
-    toggleChatBox("e")
-  }
-});
